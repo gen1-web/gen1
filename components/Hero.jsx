@@ -11,9 +11,15 @@ import CTA from "./CTA";
 const Hero = () => {
   return (
     <main className="flex-1 flex flex-col">
-      <Gallery />
-      <CTA />
-      <Services />
+      <div className="bg-black">
+        <Gallery />
+      </div>
+      <div className="bg-gray-900">
+        <CTA />
+      </div>
+      <div className="bg-gray-800">
+        <Services />
+      </div>
     </main>
   );
 };
