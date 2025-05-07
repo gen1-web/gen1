@@ -7,8 +7,8 @@ import { ArrowRight } from "lucide-react"
 export default function ServicesSection() {
   const sectionRef = useRef(null)
 
+  // Add smooth animation to the section
   useEffect(() => {
-    // Function to check if an element is in viewport
     const isInViewport = (element) => {
       const rect = element.getBoundingClientRect()
       return (
@@ -19,24 +19,20 @@ export default function ServicesSection() {
       )
     }
 
-    // Function to handle scroll
     const handleScroll = () => {
       const section = sectionRef.current
       if (section && isInViewport(section)) {
         // Add animation class to section
         section.classList.add("animate-services")
+        section.style.overflow = "hidden" // Prevent scroll bar appearance
         // Remove scroll listener after animation is triggered
         window.removeEventListener("scroll", handleScroll)
       }
     }
 
-    // Add scroll event listener
     window.addEventListener("scroll", handleScroll)
-
-    // Check initial state (in case section is already in viewport)
     handleScroll()
 
-    // Cleanup
     return () => {
       window.removeEventListener("scroll", handleScroll)
     }
