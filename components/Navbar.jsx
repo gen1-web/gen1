@@ -4,11 +4,10 @@ import { Button } from "@/components/ui/button"
 import { Phone, Calendar } from "lucide-react"
 const Navbar = () => {
   return (
-    <header className="container mx-auto py-6 px-4 flex items-center justify-between">
+    <header className="container mx-auto py-6 px-4 flex items-center justify-around">
     {/* Logo */}
     <Link href="/" className="flex items-center">
-      <span className="text-white text-3xl font-bold">Gen</span>
-      <span className="text-red-600 text-3xl font-bold">1</span>
+      <img src="/Gen1.svg" alt="Gen1 Logo" className="h-20 w-20 mr-2" />
     </Link>
 
     {/* Navigation */}
