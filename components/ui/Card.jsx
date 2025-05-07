@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 const Card = (props) => {
   return (
     <div className="relative bg-red-600 rounded-3xl p-6 flex flex-col justify-between h-80 overflow-hidden">

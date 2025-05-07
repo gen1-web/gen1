@@ -1,11 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Phone } from "lucide-react";
 import AnimatedTextSection from "./AnimatedTextSection";
-import { Calendar } from "lucide-react";
 import Card from "./ui/Card";
 
 const Services = () => {
