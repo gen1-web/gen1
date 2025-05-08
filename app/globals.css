@@ -109,6 +109,7 @@
   body {
     background-color: black;
     color: white;
+    font-family: 'Bricolage Grotesque', sans-serif;
   }
 }
 
@@ -126,6 +127,10 @@
 
 .to-custom-light-red {
   --tw-gradient-to: var(--custom-light-red) var(--tw-gradient-to-position);
+}
+
+.gradient-radial {
+  --tw-gradient-stops: radial-gradient(var(--tw-gradient-stops));
 }
 
 /* 3D Curved Gallery Styles */

@@ -1,7 +1,7 @@
 import React from 'react'
 const AnimatedTextSection = () => {
   return (
-    <section className="container mx-auto py-16 md:py-24 px-4">
+    <section className="container mx-auto py-6 md:py-24 px-4">
         <div className="max-w-5xl mx-auto">
           <p className="text-xl md:text-2xl leading-relaxed text-zinc-500 animated-text">
             Gen1 Solutions is a leading creative agency, dedicated to delivering
