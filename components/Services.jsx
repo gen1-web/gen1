@@ -43,7 +43,7 @@ export default function ServicesSection() {
       <AnimatedTextSection />
       <section
         ref={sectionRef}
-        className="container mx-auto py-6 md:py-24 px-4 services-section"
+        className="container mx-auto mt-0 py-6 md:py-24 px-4 services-section"
       >
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1">
@@ -76,8 +76,8 @@ export default function ServicesSection() {
             </div>
 
             {/* Video Card */}
-            <div className="service-card bg-zinc-900 rounded-3xl p-6 flex flex-col justify-between h-80">
-              <div className="bg-zinc-800 text-white rounded-full px-4 py-2 inline-block font-semibold w-fit">
+            <div className="BACKGROUND-DIV service-card bg-zinc-900 rounded-3xl p-6 flex flex-col justify-between h-80">
+              <div className="TITLE-DIV bg-zinc-800 text-white rounded-full px-4 py-2 inline-block font-semibold w-fit">
                 Video
               </div>
               <div>
@@ -95,8 +95,8 @@ export default function ServicesSection() {
             </div>
 
             {/* Web Development Card */}
-            <div className="service-card bg-zinc-900 rounded-3xl p-6 flex flex-col justify-between h-80">
-              <div className="bg-zinc-800 text-white rounded-full px-4 py-2 inline-block font-semibold w-fit">
+            <div className="BACKGROUND-DIV service-card bg-zinc-900 rounded-3xl p-6 flex flex-col justify-between h-80">
+              <div className="TITLE-DIV bg-zinc-800 text-white rounded-full px-4 py-2 inline-block font-semibold w-fit">
                 Web Development
               </div>
               <div>
@@ -114,8 +114,8 @@ export default function ServicesSection() {
             </div>
 
             {/* Marketing Card */}
-            <div className="service-card bg-zinc-900 rounded-3xl p-6 flex flex-col justify-between h-80">
-              <div className="bg-zinc-800 text-white rounded-full px-4 py-2 inline-block font-semibold w-fit">
+            <div className="BACKGROUND-DIV service-card bg-zinc-900 rounded-3xl p-6 flex flex-col justify-between h-80">
+              <div className="TITLE-DIV bg-zinc-800 text-white rounded-full px-4 py-2 inline-block font-semibold w-fit">
                 Marketing
               </div>
               <div>
