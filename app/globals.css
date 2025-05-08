@@ -220,3 +220,20 @@
     opacity: 1;
   }
 }
+
+.BACKGROUND-DIV {
+  transition: background-color 0.5s ease;
+}
+
+.TITLE-DIV {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.BACKGROUND-DIV:hover {
+  background-color: #CC0000;
+}
+
+.BACKGROUND-DIV:hover .TITLE-DIV {
+  background-color: white;
+  color: #CC0000;
+}

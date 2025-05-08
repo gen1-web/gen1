@@ -79,7 +79,7 @@ export default function TextAnimationScript() {
     animateTextWithInterval()
 
     // Set interval for constant animation
-    const intervalId = setInterval(animateTextWithInterval, 10000)
+    const intervalId = setInterval(animateTextWithInterval, 30000)
 
     // Cleanup
     return () => {
