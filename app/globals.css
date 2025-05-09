@@ -237,3 +237,9 @@
   background-color: white;
   color: #CC0000;
 }
+
+
+.stretched-text {
+  transform: scaleX(1.1);
+  transform-origin: 0 0;
+}

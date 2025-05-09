@@ -2,6 +2,9 @@ import React from "react";
 import Gallery from "./Gallery";
 import Services from "./Services";
 import AnimatedTextSection from "./AnimatedTextSection";
+import PortfolioSection from "./Portfolio";
+import Testimonial from "./Testimonial";
+import PartnerClients from "./Partner";
 
 const Hero = () => {
   return (
@@ -11,6 +14,15 @@ const Hero = () => {
       </div>
       <div className="bg-[#141414]">
         <Services />
+      </div>
+      <div className="bg-[#141414]">
+        <PortfolioSection/>
+      </div>
+      <div className="bg-[#202020]">
+        <Testimonial/>
+      </div>
+      <div className="bg-[#141414]">
+        <PartnerClients/>
       </div>
     </main>
   );

@@ -11,13 +11,13 @@ const AnimatedTextSection = () => {
             are proud to offer Halal creative solutions that inspire and connect
             with audiences around the world, crafting narratives that touch
             hearts and uplift communities.
-            <span className="absolute bottom-0 left-0 w-0 h-0.5  bg-zinc-800 group-hover:w-full transition-all duration-300"></span>
+            <span className="absolute bottom-0 left-0 w-0 h-0.5  bg-zinc-800 group-hover:w-full transition-all duration-700"></span>
           </p>
-          <h2 className="text-xl font-bold mt-12 mb-6 pb-2 inline-block relative group">
+          <h2 className="text-xl font-bold mt-5 mb-6 inline-block relative group">
             <Link href={"/"}>
             More About Us
             </Link>
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-zinc-300 group-hover:w-full transition-all duration-300"></span>
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-zinc-300 group-hover:w-full transition-all duration-700"></span>
           </h2>
         </div>
     </section>

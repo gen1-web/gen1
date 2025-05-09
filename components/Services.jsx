@@ -43,7 +43,7 @@ export default function ServicesSection() {
       <AnimatedTextSection />
       <section
         ref={sectionRef}
-        className="container mx-auto mt-0 py-6 md:py-24 px-4 services-section"
+        className="container mx-auto py-6 md:py-24 px-4 services-section overflow-hidden"
       >
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1">
