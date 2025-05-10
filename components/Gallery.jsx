@@ -25,7 +25,7 @@ const Gallery = () => {
         {/* 3D Curved Gallery */}
         <div className="relative h-full w-full bg-[radial-gradient(ellipse_at_50%_50%,_#cc0000_0%,_#000000_80%)]">
           <div className="curved-gallery-container relative z-10 justify-around bg-transparent py-6 px-4">
-            <div className="poster-wrapper">
+            <div className="poster-wrapper flex justify-around gap-9">
               <div
                 className="poster-item"
                 style={{ transform: "rotateY(30deg)" }}
@@ -91,14 +91,14 @@ const Gallery = () => {
         </div>
       </div>
       <div className="container mx-auto text-center py-8 md:py-12 px-4">
-      <Button
-        variant="outline"
-        className="rounded-full bg-white text-black hover:bg-[#CC0000] border-0 flex items-center gap-2 px-6 py-6 text-lg mx-auto"
-      >
-        <Calendar className="h-5 w-5" />
-        <span>Book a FREE Consultation</span>
-      </Button>
-    </div>
+        <Button
+          variant="outline"
+          className="rounded-full bg-white text-black hover:bg-[#CC0000] border-0 flex items-center gap-2 px-6 py-6 text-lg mx-auto"
+        >
+          <Calendar className="h-5 w-5" />
+          <span>Book a FREE Consultation</span>
+        </Button>
+      </div>
     </section>
   );
 };

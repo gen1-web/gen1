@@ -15,13 +15,13 @@ export default function PartnerClients() {
   ]
 
   return (
-    <section className="py-16 px-4">
+    <section className="py-16 px-4 ml-8">
       <div className="container mx-auto">
         <h2 className="text-white text-5xl font-bold mb-16">
           Partner & Clients
         </h2>
         <div className="flex items-center gap-2">
-          <div className="flex -space-x-9 overflow-hidden hover:space-x-9 transition-all duration-300">
+          <div className="flex -space-x-13 overflow-hidden hover:space-x-20 transition-all duration-300">
             {partners.map((i) => (
               <div
                 key={i.id}

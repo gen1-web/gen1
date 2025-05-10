@@ -5,10 +5,11 @@ import AnimatedTextSection from "./AnimatedTextSection";
 import PortfolioSection from "./Portfolio";
 import Testimonial from "./Testimonial";
 import PartnerClients from "./Partner";
+import Footer from "./Footer";
 
 const Hero = () => {
   return (
-    <main className="flex-1 flex flex-col">
+    <main className="flex-1 flex flex-col overflow-hidden">
       <div className="bg-[gradient-to-b from-[#202020] to-[#1a1a1a]] mt-5">
         <Gallery />
       </div>
@@ -22,7 +23,7 @@ const Hero = () => {
         <Testimonial/>
       </div>
       <div className="bg-[#141414]">
-        <PartnerClients/>
+        <Footer/>
       </div>
     </main>
   );
