@@ -44,7 +44,7 @@ const Footer = () => {
             <div className="md:col-span-2">
               <div className='flex flex-row items-start'>
               <Link href="/" className="flex items-center mb-6">
-               <Image src="/Gen1.svg" alt="Gen1 Solutions Logo" width={250} height={50} className="h-10" />
+               <Image src="/Gen1.svg" alt="Gen1 Solutions Logo" width={250} height={250} className="h-15" />
                </Link>
                <div className='flex flex-col'>
                <p className="text-white/90 text-2xl max-w-md">
