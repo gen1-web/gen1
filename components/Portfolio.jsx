@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 // Portfolio data
 const portfolioItems = [
@@ -187,7 +188,7 @@ export default function PortfolioSection() {
                   variant="outline"
                   className="rounded-full bg-white text-black hover:bg-white/90 border-0 flex items-center gap-2 px-6"
                 >
-                  <span>View Portfolio</span>
+                  <Link href="/portfolio">View Portfolio</Link>
                   <ArrowRight className="h-4 w-4" />
                 </Button>
               </div>
