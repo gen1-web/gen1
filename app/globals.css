@@ -243,3 +243,20 @@
   transform: scaleX(1.1);
   transform-origin: 0 0;
 }
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/card-bg.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 0;
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}

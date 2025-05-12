@@ -8,24 +8,20 @@ import AnimatedTextSection from "./AnimatedTextSection";
 export default function ServicesSection() {
   const sectionRef = useRef(null);
 
-  // Add smooth animation to the section
   useEffect(() => {
     const isInViewport = (element) => {
       const rect = element.getBoundingClientRect();
       return (
-        rect.top <
-          (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.bottom >= 0
+      rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.bottom >= 0
       );
     };
 
     const handleScroll = () => {
       const section = sectionRef.current;
       if (section && isInViewport(section)) {
-        // Add animation class to section
         section.classList.add("animate-services");
-        section.style.overflow = "hidden"; // Prevent scroll bar appearance
-        // Remove scroll listener after animation is triggered
+        section.style.overflow = "hidden";
         window.removeEventListener("scroll", handleScroll);
       }
     };
@@ -37,6 +33,15 @@ export default function ServicesSection() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const services = [
+    { title: "Graphic Design", href: "/services/graphic-design" },
+    { title: "Video", href: "/services/video" },
+    { title: "Web Development", href: "/services/web-development" },
+    { title: "Marketing", href: "/services/marketing" },
+  ];
+
+  const cardText = "Let us create creative customizable designs to elevate your brand";
 
   return (
     <>
@@ -50,87 +55,29 @@ export default function ServicesSection() {
             <h2 className="text-4xl md:text-5xl font-bold mb-2 text-red-600">
               Services
             </h2>
-            <h3 className="text-4xl md:text-5xl font-bold text-white">
-              We Offer
-            </h3>
+            <h3 className="text-4xl md:text-5xl font-bold text-white">We Offer</h3>
           </div>
 
           <div className="md:col-span-3 grid grid-cols-1 md:grid-cols-4 gap-4">
-            {/* Graphic Design Card */}
-            <div className="BACKGROUND-DIV service-card bg-zinc-900 hover:bg-[#CC0000] rounded-3xl p-6 flex flex-col justify-between h-80 transition-colors duration-500 ease-in-out">
-              <div className="bg-zinc-800 text-white rounded-full px-4 py-2 inline-block font-semibold w-fit  TITLE-DIV">
-                Graphic Design
+            {services.map((service, idx) => (
+              <div
+                key={idx}
+                className="group relative service-card bg-zinc-900 rounded-3xl p-6 flex flex-col justify-between h-80 transition-colors duration-500 ease-in-out overflow-hidden hover:bg-[#CC0000]"
+              >
+                <div className="relative z-10">
+                  <div className="TITLE-DIV bg-zinc-800 text-white rounded-full px-4 py-2 inline-block font-semibold w-fit transition-all duration-300 group-hover:bg-white group-hover:text-red-600">
+                    {service.title}
+                  </div>
+                  <p className="text-white text-lg mt-auto mb-8">{cardText}</p>
+                  <Link
+                    href={service.href}
+                    className="text-white/80 hover:text-white flex items-center gap-1 text-sm"
+                  >
+                    learn more <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </div>
               </div>
-              <div>
-                <p className="text-white text-lg mt-auto mb-8">
-                  Let us create creative customizable designs to elevate your
-                  brand
-                </p>
-                <Link
-                  href="/services/graphic-design"
-                  className="text-white/80 hover:text-white flex items-center gap-1 text-sm"
-                >
-                  learn more <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-            </div>
-
-            {/* Video Card */}
-            <div className="BACKGROUND-DIV service-card bg-zinc-900 rounded-3xl p-6 flex flex-col justify-between h-80">
-              <div className="TITLE-DIV bg-zinc-800 text-white rounded-full px-4 py-2 inline-block font-semibold w-fit">
-                Video
-              </div>
-              <div>
-                <p className="text-white text-lg mt-auto mb-8">
-                  Let us create creative customizable designs to elevate your
-                  brand
-                </p>
-                <Link
-                  href="/services/video"
-                  className="text-white/80 hover:text-white flex items-center gap-1 text-sm"
-                >
-                  learn more <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-            </div>
-
-            {/* Web Development Card */}
-            <div className="BACKGROUND-DIV service-card bg-zinc-900 rounded-3xl p-6 flex flex-col justify-between h-80">
-              <div className="TITLE-DIV bg-zinc-800 text-white rounded-full px-4 py-2 inline-block font-semibold w-fit">
-                Web Development
-              </div>
-              <div>
-                <p className="text-white text-lg mt-auto mb-8">
-                  Let us create creative customizable designs to elevate your
-                  brand
-                </p>
-                <Link
-                  href="/services/web-development"
-                  className="text-white/80 hover:text-white flex items-center gap-1 text-sm"
-                >
-                  learn more <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-            </div>
-
-            {/* Marketing Card */}
-            <div className="BACKGROUND-DIV service-card bg-zinc-900 rounded-3xl p-6 flex flex-col justify-between h-80">
-              <div className="TITLE-DIV bg-zinc-800 text-white rounded-full px-4 py-2 inline-block font-semibold w-fit">
-                Marketing
-              </div>
-              <div>
-                <p className="text-white text-lg mt-auto mb-8">
-                  Let us create creative customizable designs to elevate your
-                  brand
-                </p>
-                <Link
-                  href="/services/marketing"
-                  className="text-white/80 hover:text-white flex items-center gap-1 text-sm"
-                >
-                  learn more <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
