@@ -55,7 +55,7 @@ const Gallery = () => {
                 style={{ transform: "rotateY(0deg)" }}
               >
                 <Image
-                  src="/poster1.jpg"
+                  src="/poster1.png"
                   alt="The Problem with Consent"
                   width={350}
                   height={500}
