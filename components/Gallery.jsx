@@ -43,7 +43,7 @@ const Gallery = () => {
                 style={{ transform: "rotateY(15deg)" }}
               >
                 <Image
-                  src="/poster1.png"
+                  src="/football.jpg"
                   alt="Soulful Ties"
                   width={350}
                   height={500}
@@ -55,7 +55,7 @@ const Gallery = () => {
                 style={{ transform: "rotateY(0deg)" }}
               >
                 <Image
-                  src="/poster1.png"
+                  src="/lost.jpg"
                   alt="The Problem with Consent"
                   width={350}
                   height={500}
@@ -67,7 +67,7 @@ const Gallery = () => {
                 style={{ transform: "rotateY(-15deg)" }}
               >
                 <Image
-                  src="/poster1.png"
+                  src="/night.jpg"
                   alt="The Revival"
                   width={350}
                   height={500}
