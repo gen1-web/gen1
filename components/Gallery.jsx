@@ -1,10 +1,37 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
-import CTA from "./CTA";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "lucide-react";
+import gsap from "gsap";
 
 const Gallery = () => {
+  const wrapperRef = useRef(null);
+
+  useEffect(() => {
+    const wrapper = wrapperRef.current;
+    if (!wrapper) return;
+
+    const posterWidth = 350 + 36; // 350px + 2.25rem (gap-9)
+
+    const slide = () => {
+      gsap.to(wrapper, {
+        x: `-=${posterWidth}`,
+        duration: 0.5,
+        ease: "power2.inOut",
+        onComplete: () => {
+          const firstPoster = wrapper.children[0];
+          wrapper.appendChild(firstPoster);
+          gsap.set(wrapper, { x: 0 });
+        },
+      });
+    };
+
+    const interval = setInterval(slide, 6000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative">
       {/* Hero Text */}
@@ -17,79 +44,48 @@ const Gallery = () => {
           Crafting impactful content for visionary Islamic brands
         </p>
       </div>
-      {/* Red Glow Background for Gallery */}
-      <div className="relative w-full overflow-hidden">
-        {/* Red Glow Gradient */}
-        <div className="absolute inset-0 bg-gradient-radial from-red-600/30 via-red-900/20 to-transparent"></div>
 
-        {/* 3D Curved Gallery */}
+      {/* Gallery */}
+      <div className="relative w-full overflow-hidden">
+        {/* Red Glow */}
+        <div className="absolute inset-0 bg-gradient-radial from-red-600/30 via-red-900/20 to-transparent" />
+
         <div className="relative h-full w-full bg-[radial-gradient(ellipse_at_50%_50%,_#cc0000_0%,_#000000_80%)]">
-          <div className="curved-gallery-container relative z-10 justify-around bg-transparent py-6 px-4">
-            <div className="poster-wrapper flex justify-around gap-9">
-              <div
-                className="poster-item"
-                style={{ transform: "rotateY(30deg)" }}
-              >
-                <Image
-                  src="/poster1.png"
-                  alt="The Court Flush"
-                  width={350}
-                  height={500}
-                  className="rounded-lg object-cover shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl"
-                />
-              </div>
-              <div
-                className="poster-item"
-                style={{ transform: "rotateY(15deg)" }}
-              >
-                <Image
-                  src="/football.jpg"
-                  alt="Soulful Ties"
-                  width={350}
-                  height={500}
-                  className="rounded-lg object-cover shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl"
-                />
-              </div>
-              <div
-                className="poster-item"
-                style={{ transform: "rotateY(0deg)" }}
-              >
-                <Image
-                  src="/poster1.png"
-                  alt="The Problem with Consent"
-                  width={350}
-                  height={500}
-                  className="rounded-lg object-cover shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl"
-                />
-              </div>
-              <div
-                className="poster-item"
-                style={{ transform: "rotateY(-15deg)" }}
-              >
-                <Image
-                  src="/night.jpg"
-                  alt="The Revival"
-                  width={350}
-                  height={500}
-                  className="rounded-lg object-cover shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl"
-                />
-              </div>
-              <div
-                className="poster-item"
-                style={{ transform: "rotateY(-30deg)" }}
-              >
-                <Image
-                  src="/poster1.png"
-                  alt="Turn the Page"
-                  width={350}
-                  height={500}
-                  className="rounded-lg object-cover shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl"
-                />
-              </div>
+          <div className="curved-gallery-container relative z-10 py-6 px-4 overflow-hidden">
+            <div className="poster-wrapper flex gap-9 w-max" ref={wrapperRef}>
+              {[
+                { src: "/poster1.png", alt: "The Court Flush" },
+                { src: "/football.jpg", alt: "Soulful Ties" },
+                { src: "/poster1.png", alt: "The Problem with Consent" },
+                { src: "/night.jpg", alt: "The Revival" },
+                { src: "/poster1.png", alt: "Turn the Page" },
+                { src: "/poster1.png", alt: "The Court Flush" },
+                { src: "/football.jpg", alt: "Soulful Ties" },
+                { src: "/poster1.png", alt: "The Problem with Consent" },
+                { src: "/night.jpg", alt: "The Revival" },
+                { src: "/poster1.png", alt: "Turn the Page" },
+                { src: "/poster1.png", alt: "The Court Flush" },
+                { src: "/football.jpg", alt: "Soulful Ties" },
+                { src: "/poster1.png", alt: "The Problem with Consent" },
+                { src: "/night.jpg", alt: "The Revival" },
+                { src: "/poster1.png", alt: "Turn the Page" },
+              ].map((poster, index) => (
+                <div className="poster-item flex-shrink-0" key={index}>
+                  <Image
+                    src={poster.src}
+                    alt={poster.alt}
+                    width={350}
+                    height={500}
+                    className="rounded-lg object-cover shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </div>
+
+      {/* CTA */}
       <div className="container mx-auto text-center py-8 md:py-12 px-4">
         <Button
           variant="outline"
