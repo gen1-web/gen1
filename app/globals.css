@@ -151,6 +151,8 @@
   justify-content: center;
   align-items: center;
   transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.1s linear;
 }
 
 .poster-item {
@@ -158,10 +160,15 @@
   transition: all 0.3s ease;
   transform-origin: center;
   backface-visibility: hidden;
+  will-change: transform, opacity;
+  filter: brightness(0.85);
+  transition: filter 0.3s ease-in-out, transform 0.3s ease-out;
 }
 
 .poster-item:hover {
   z-index: 10;
+  filter: brightness(1.05);
+  transform: scale(1.05);
 }
 
 .bg-gradient-radial {

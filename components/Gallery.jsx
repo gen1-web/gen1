@@ -5,31 +5,53 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "lucide-react";
 import gsap from "gsap";
-
+import Link from "next/link";
 const Gallery = () => {
-  const wrapperRef = useRef(null);
-
-  useEffect(() => {
+  const wrapperRef = useRef(null);  useEffect(() => {
     const wrapper = wrapperRef.current;
     if (!wrapper) return;
 
     const posterWidth = 350 + 36; // 350px + 2.25rem (gap-9)
 
-    const slide = () => {
-      gsap.to(wrapper, {
-        x: `-=${posterWidth}`,
-        duration: 0.5,
-        ease: "power2.inOut",
-        onComplete: () => {
-          const firstPoster = wrapper.children[0];
-          wrapper.appendChild(firstPoster);
-          gsap.set(wrapper, { x: 0 });
-        },
-      });
-    };
+    // Create a timeline for smoother animations
+    const tl = gsap.timeline({
+      repeat: -1,
+      repeatDelay: 4.5, // Wait before starting next animation
+      defaults: { ease: "power2.inOut" }
+    });
 
-    const interval = setInterval(slide, 6000);
-    return () => clearInterval(interval);
+    // Clone all items first to ensure infinite loop
+    const items = Array.from(wrapper.children);
+    items.forEach(item => {
+      const clone = item.cloneNode(true);
+      wrapper.appendChild(clone);
+    });
+
+    // Initial setup - no immediate animation
+    gsap.set(wrapper, { x: 0 });
+
+    // Create the seamless loop animation
+    tl.to(wrapper, {
+      x: `-=${posterWidth}`,
+      duration: 1.5, 
+      ease: "power2.inOut",
+      onComplete: () => {
+        // After first item is fully out of view, move it to the end
+        // This creates a seamless effect as new items come in
+        const firstItem = wrapper.children[0];
+        wrapper.appendChild(firstItem);
+        gsap.set(wrapper, { x: 0 });
+      },
+      onRepeat: () => {
+        // On each repeat, reorder DOM elements without animation
+        const firstItem = wrapper.children[0];
+        wrapper.appendChild(firstItem);
+        gsap.set(wrapper, { x: 0 });
+      }
+    });    // Cleanup function
+    return () => {
+      tl.kill();
+    };
   }, []);
 
   return (
@@ -92,7 +114,7 @@ const Gallery = () => {
           className="rounded-full bg-white text-black hover:bg-[#CC0000] border-0 flex items-center gap-2 px-6 py-6 text-lg mx-auto"
         >
           <Calendar className="h-5 w-5" />
-          <span>Book a FREE Consultation</span>
+          <Link href="/form">Book a FREE Consultation</Link>
         </Button>
       </div>
     </section>

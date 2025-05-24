@@ -26,7 +26,7 @@ const Footer = () => {
                 className="rounded-full bg-white text-black hover:bg-white/90 border-0 flex items-center gap-2 px-6 py-6"
                 >
                 <Calendar className="h-5 w-5" />
-                <span>Book a FREE Consultation</span>
+                <Link href="/form">Book a FREE Consultation</Link>
               </Button>
             </div>
           </div>

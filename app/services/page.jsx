@@ -19,10 +19,10 @@ export default function ServicesPage() {
       image: "/graphic.png",
       description:
         "Gen1 Solutions provides high quality Graphic Design services which include Social Media Campaigns, Banner Designs, Thumbnail Designs. We are the best in Designing Social media banners and Event posters. Let us create creative customizable designs to elevate your brand.",
-      bgColor: "bg-red-600",
+      bgColor: "bg-zinc-900",
       textColor: "text-white",
-      labelBg: "bg-white",
-      labelText: "text-red-600",
+      labelBg: "bg-zinc-800",
+      labelText: "text-white",
       icon: Search,
       benefits: [
         "Professional designs that capture your brand's essence",
@@ -35,12 +35,12 @@ export default function ServicesPage() {
         { title: "Planning", description: "We create mood boards and sketches to establish the visual direction", icon: BarChart3 },
         { title: "Execution", description: "We craft pixel-perfect designs that align with your brand and objectives", icon: Code },
       ],
-      portfolioItems: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg", "/placeholder.svg"],
+      portfolioItems: ["/poster1.png", "/lost.jpg", "/football.jpg", "/night.jpg"],
     },
     {
       id: 2,
       title: "Video",
-      image: "/graphic.png",
+      image: "/video.png",
       description:
         "Gen1 Solutions provides high quality Video Production services which include Social Media Campaigns, Promotional Videos, Event Coverage. We are the best in creating engaging video content that resonates with your audience and elevates your brand.",
       bgColor: "bg-zinc-900",
@@ -64,7 +64,7 @@ export default function ServicesPage() {
     {
       id: 3,
       title: "Web Development",
-      image: "/graphic.png",
+      image: "/web.png",
       description:
         "Gen1 Solutions provides high quality Web Development services which include responsive websites, e-commerce platforms, and custom web applications. We are the best in creating modern, fast, and user-friendly websites that drive results for your organization.",
       bgColor: "bg-zinc-900",
@@ -88,7 +88,7 @@ export default function ServicesPage() {
     {
       id: 4,
       title: "Marketing",
-      image: "/graphic.png",
+      image: "/marketing.png",
       description:
         "Gen1 Solutions provides high quality Marketing services which include Social Media Campaigns, Content Marketing, and Digital Advertising. We are the best in creating strategic marketing plans that connect with your audience and drive measurable results.",
       bgColor: "bg-zinc-900",
@@ -159,16 +159,16 @@ export default function ServicesPage() {
                         alt={service.title}
                         fill
                         className="object-cover"
-                        style={{ filter: "brightness(0.7)" }}
+                        style={{ filter: "brightness(0.7)", opacity:0.5 }}
                       />
                     </div>
                     <div
-                      className={`${service.bgColor} p-6 relative transition-all duration-300 ${
+                      className={`${service.bgColor} p-6 relative transition-all duration-300 hover:bg-[#CC0000] ${
                         hoveredCard === service.id ? "h-auto" : "h-48 md:h-56"
                       }`}
                     >
                       <div
-                        className={`${service.labelBg} ${service.labelText} inline-block px-4 py-1 rounded-full text-sm font-medium mb-4`}
+                        className={`${service.labelBg} ${service.labelText} inline-block px-4 py-1 rounded-full text-sm font-medium mb-4 transition-all duration-300 hover:bg-white hover:text-red-600`}
                       >
                         {service.title}
                       </div>
@@ -184,7 +184,6 @@ export default function ServicesPage() {
 
             {/* Clients & Footer */}
             <div className="mt-20">
-              <PartnerClients />
               <Footer />
             </div>
           </>
