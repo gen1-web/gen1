@@ -83,7 +83,7 @@ export default function ServicesPage() {
         { title: "Planning", description: "We create wireframes and prototypes to establish the user experience", icon: BarChart3 },
         { title: "Execution", description: "We develop clean, efficient code that brings your website to life", icon: Code },
       ],
-      portfolioItems: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg", "/placeholder.svg"],
+      portfolioItems: ["/darelmecca.png"],
     },
     {
       id: 4,

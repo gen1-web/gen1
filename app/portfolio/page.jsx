@@ -87,25 +87,13 @@ export default function PortfolioPage() {
     },
     {
       id: 6,
-      title: "E-commerce Website",
+      title: "Travel Agency Website",
       category: "Web Development",
-      image: "/placeholder.svg?height=400&width=700",
+      image: "/darelmecca.png?height=400&width=300",
       type: "Web Development",
       aspectRatio: "16/9",
       date: "January 20, 2023",
-      description: "A modern e-commerce platform designed specifically for Islamic products and services.",
-      fullDescription:
-        "Gen1 Solutions is a leading creative agency, dedicated to delivering innovative and purpose-driven content for global Islamic organizations. With a deep-rooted commitment to Islamic values, we are proud to offer Halal creative solutions that inspire and connect with audiences around the world, crafting narratives that touch hearts and uplift communities.",
-    },
-    {
-      id: 7,
-      title: "Islamic App UI",
-      category: "UI/UX Design",
-      image: "/placeholder.svg?height=400&width=300",
-      type: "Web Development",
-      aspectRatio: "3/4",
-      date: "December 5, 2022",
-      description: "User interface design for a mobile application focused on Islamic teachings and daily practices.",
+      description: "A modern travel platform designed specifically for Islamic travels and tours.",
       fullDescription:
         "Gen1 Solutions is a leading creative agency, dedicated to delivering innovative and purpose-driven content for global Islamic organizations. With a deep-rooted commitment to Islamic values, we are proud to offer Halal creative solutions that inspire and connect with audiences around the world, crafting narratives that touch hearts and uplift communities.",
     },

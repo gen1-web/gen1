@@ -77,20 +77,22 @@ const Gallery = () => {
             <div className="poster-wrapper flex gap-9 w-max" ref={wrapperRef}>
               {[
                 { src: "/poster1.png", alt: "The Court Flush" },
-                { src: "/football.jpg", alt: "Soulful Ties" },
-                { src: "/poster1.png", alt: "The Problem with Consent" },
-                { src: "/night.jpg", alt: "The Revival" },
-                { src: "/poster1.png", alt: "Turn the Page" },
-                { src: "/poster1.png", alt: "The Court Flush" },
-                { src: "/football.jpg", alt: "Soulful Ties" },
-                { src: "/poster1.png", alt: "The Problem with Consent" },
-                { src: "/night.jpg", alt: "The Revival" },
-                { src: "/poster1.png", alt: "Turn the Page" },
-                { src: "/poster1.png", alt: "The Court Flush" },
-                { src: "/football.jpg", alt: "Soulful Ties" },
-                { src: "/poster1.png", alt: "The Problem with Consent" },
-                { src: "/night.jpg", alt: "The Revival" },
-                { src: "/poster1.png", alt: "Turn the Page" },
+                { src: "/poster2.jpg", alt: "Soulful Ties" },
+                { src: "/night.jpg", alt: "The Problem with Consent" },
+                { src: "/poster4.jpg", alt: "The Court Flush" },
+                { src: "/poster5.jpg", alt: "Soulful Ties" },
+                { src: "/poster6.jpg", alt: "The Problem with Consent" },
+                { src: "/poster7.jpg", alt: "The Court Flush" },
+                { src: "/poster8.jpg", alt: "Soulful Ties" },
+                { src: "/football.jpg", alt: "The Problem with Consent" },
+                { src: "/lost.jpg", alt: "Soulful Ties" },
+                { src: "/poster11.jpg", alt: "The Problem with Consent" },
+                { src: "/poster12.jpg", alt: "The Court Flush" },
+                { src: "/poster13.jpg", alt: "Soulful Ties" },
+                { src: "/poster14.jpg", alt: "The Problem with Consent" },
+                { src: "/poster15.jpg", alt: "The Court Flush" },
+                { src: "/poster16.jpg", alt: "Soulful Ties" },
+                
               ].map((poster, index) => (
                 <div className="poster-item flex-shrink-0" key={index}>
                   <Image

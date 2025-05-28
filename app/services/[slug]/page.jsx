@@ -133,10 +133,7 @@ const services = [
       },
     ],
     portfolioItems: [
-      "/placeholder.svg",
-      "/placeholder.svg",
-      "/placeholder.svg",
-      "/placeholder.svg",
+      "/darelmecca.png",
     ],
   },
   {
