@@ -85,7 +85,7 @@ const Gallery = () => {
                 { src: "/poster7.jpg", alt: "The Court Flush" },
                 { src: "/poster8.jpg", alt: "Soulful Ties" },
                 { src: "/football.jpg", alt: "The Problem with Consent" },
-                { src: "/lost.jpg", alt: "Soulful Ties" },
+                { src: "/poster1.png", alt: "Soulful Ties" },
                 { src: "/poster11.jpg", alt: "The Problem with Consent" },
                 { src: "/poster12.jpg", alt: "The Court Flush" },
                 { src: "/poster13.jpg", alt: "Soulful Ties" },
