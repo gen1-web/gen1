@@ -111,10 +111,10 @@ export default function ServicesPage() {
     },
   ]
 
-  const handleServiceClick = (service) => {
-    setSelectedService(service)
-    window.scrollTo({ top: 0, behavior: "smooth" })
-  }
+  // const handleServiceClick = (service) => {
+  //   setSelectedService(service)
+  //   window.scrollTo({ top: 0, behavior: "smooth" })
+  // }
 
   const closeServiceDetail = () => setSelectedService(null)
 
@@ -145,40 +145,35 @@ export default function ServicesPage() {
             {/* Services Grid */}
             <div className="container mx-auto px-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {services.map((service) => (
-                  <div
-                    key={service.id}
-                    onClick={() => handleServiceClick(service)}
-                    // onMouseEnter={() => setHoveredCard(service.id)}
-                    // onMouseLeave={() => setHoveredCard(null)}
-                    className="relative overflow-hidden rounded-lg cursor-pointer transition-all duration-300"
-                  >
-                    <div className="relative h-64 w-full">
-                      <Image
-                        src={service.image}
-                        alt={service.title}
-                        fill
-                        className="object-cover"
-                        style={{ filter: "brightness(0.7)", opacity:0.5 }}
-                      />
-                    </div>
-                    <div
-                      className={`${service.bgColor} p-6 relative transition-all duration-300 hover:bg-[#CC0000] ${
-                        hoveredCard === service.id ? "h-auto" : "h-48 md:h-56"
-                      }`}
-                    >
+                {services.map((service) => {
+                  const slug = service.title.toLowerCase().replace(/\s+/g, "-");
+                  return (
+                    <Link key={service.id} href={`/services/${slug}`} className="relative overflow-hidden rounded-lg cursor-pointer transition-all duration-300">
+                      <div className="relative h-64 w-full">
+                        <Image
+                          src={service.image}
+                          alt={service.title}
+                          fill
+                          className="object-cover"
+                          style={{ filter: "brightness(0.7)", opacity: 0.5 }}
+                        />
+                      </div>
                       <div
-                        className={`${service.labelBg} ${service.labelText} inline-block px-4 py-1 rounded-full text-sm font-medium mb-4 transition-all duration-300 hover:bg-white hover:text-red-600`}
+                        className={`${service.bgColor} p-6 relative h-48 md:h-56 overflow-hidden transition-all duration-300 hover:bg-[#CC0000]`}
                       >
-                        {service.title}
+                        <div
+                          className={`${service.labelBg} ${service.labelText} inline-block px-4 py-1 rounded-full text-sm font-medium mb-4 transition-all duration-300 hover:bg-white hover:text-red-600`}
+                        >
+                          {service.title}
+                        </div>
+                        <p className={`${service.textColor} mb-4 line-clamp-3 md:line-clamp-4`}>{service.description}</p>
+                        <div className={`${service.textColor}/80 hover:${service.textColor} flex items-center gap-1 text-sm transition-colors`}>
+                          Learn more <ArrowRight className="h-4 w-4" />
+                        </div>
                       </div>
-                      <p className={`${service.textColor} mb-4 line-clamp-3 md:line-clamp-4`}>{service.description}</p>
-                      <div className={`${service.textColor}/80 hover:${service.textColor} flex items-center gap-1 text-sm transition-colors`}>
-                        Learn more <ArrowRight className="h-4 w-4" />
-                      </div>
-                    </div>
-                  </div>
-                ))}
+                    </Link>
+                  );
+                })}
               </div>
             </div>
 

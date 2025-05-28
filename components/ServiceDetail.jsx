@@ -3,6 +3,7 @@
 import Image from "next/image"
 import { ArrowLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 const ServiceDetail = ({ service, onClose }) => {
   if (!service) return null
@@ -15,7 +16,7 @@ const ServiceDetail = ({ service, onClose }) => {
         className="inline-flex items-center text-white/70 hover:text-white transition-colors mb-8"
       >
         <ArrowLeft className="mr-2 h-4 w-4" />
-        Back to Services
+        <Link href="/services">Back to Services</Link>
       </button>
 
       {/* Service Header */}
