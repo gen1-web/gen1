@@ -35,10 +35,10 @@ export default function ServicesSection() {
   }, []);
 
   const services = [
-    { title: "Graphic Design", href: "/services/graphic-design" },
-    { title: "Video", href: "/services/video" },
-    { title: "Web Development", href: "/services/web-development" },
-    { title: "Marketing", href: "/services/marketing" },
+    { title: "Graphic Design", href: "/services" },
+    { title: "Video", href: "/services" },
+    { title: "Web Development", href: "/services" },
+    { title: "Marketing", href: "/services" },
   ];
 
   const cardText = "Let us create creative customizable designs to elevate your brand";
