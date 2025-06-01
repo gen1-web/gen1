@@ -52,12 +52,14 @@ const Navbar = () => {
           <Calendar className="h-4 w-4" />
           <Link href="/form">Book a FREE Consultation</Link>
         </Button>
-        <Button
-          size="icon"
-          className="rounded-full bg-red-600 hover:bg-red-700 h-10 w-10 flex items-center justify-center"
-        >
-          <Phone className="h-5 w-5" />
-        </Button>
+        <Link href="https://wa.me/923054559888" target="_blank">
+          <Button
+            size="icon"
+            className="rounded-full bg-red-600 hover:bg-red-700 h-10 w-10 flex items-center justify-center"
+          >
+            <Phone className="h-5 w-5"/>
+          </Button>
+        </Link>
       </div>
 
       {/* Mobile Menu */}
@@ -83,12 +85,14 @@ const Navbar = () => {
                 <Calendar className="h-4 w-4" />
                 <span>Book a FREE Consultation</span>
               </Button>
-              <Button
-                size="icon"
-                className="rounded-full bg-red-600 hover:bg-red-700 h-10 w-10 mx-auto"
-              >
-                <Phone className="h-5 w-5" />
-              </Button>
+              <Link href="https://wa.me/923054559888" target="_blank">
+                <Button
+                  size="icon"
+                  className="rounded-full bg-red-600 hover:bg-red-700 h-10 w-10 mx-auto"
+                >
+                  <Phone className="h-5 w-5" />
+                </Button>
+              </Link>
             </li>
           </ul>
         </div>
