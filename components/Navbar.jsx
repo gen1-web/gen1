@@ -9,7 +9,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <header className="container mx-auto py-6 px-4 flex items-center justify-between relative">
+    <header className="container mx-auto py-6 px-4 flex items-center justify-between relative ">
       {/* Logo */}
       <Link href="/" className="flex items-center">
         <img src="/Gen1.svg" alt="Gen1 Logo" className="h-16 w-16 mr-2" />

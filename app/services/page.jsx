@@ -178,7 +178,7 @@ export default function ServicesPage() {
             </div>
 
             {/* Clients & Footer */}
-            <div className="mt-20">
+            <div className="mt-20 bg-[#141414]">
               <Footer />
             </div>
           </>

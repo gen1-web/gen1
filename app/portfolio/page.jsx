@@ -303,7 +303,9 @@ export default function PortfolioPage() {
       )}
     </div>
     <Testimonial/>
+    <div className="bg-[#141414]">
     <Footer/>
+    </div>
     </>
   )
 }

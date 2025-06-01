@@ -202,7 +202,9 @@ export default function ServicePage({ params }) {
       <main className="pt-8 pb-20">
         <ServiceDetail service={service} onClose={() => {}} />
       </main>
+      <div className="bg-[#141414]">
       <Footer />
+      </div>
     </div>
   );
 }
