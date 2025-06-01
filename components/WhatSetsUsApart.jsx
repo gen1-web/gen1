@@ -21,7 +21,7 @@ const WhatSetsUsApart = () => {
           <div className="flex justify-center lg:justify-end">
             <div className="relative w-full max-w-md">
               <Image
-                src="/chess-strategy-image.png"
+                src="/chess.png"
                 alt="Strategic planning with chess pieces and wooden blocks representing growth and strategy"
                 width={400}
                 height={240}
