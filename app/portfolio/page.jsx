@@ -37,7 +37,7 @@ export default function PortfolioPage() {
       id: 2,
       title: "Brand Video",
       category: "Social Media Campaign",
-      image: "/placeholder.svg?height=400&width=700",
+      url: "https://res.cloudinary.com/dvgsiwacs/video/upload/v1749023873/hwhq59teserq7ipezyez.mp4",
       type: "Video",
       aspectRatio: "16/9",
       date: "May 15, 2023",
@@ -99,9 +99,9 @@ export default function PortfolioPage() {
     },
     {
       id: 8,
-      title: "Marketing Campaign",
+      title: "Salam Arabic",
       category: "Digital Marketing",
-      image: "/placeholder.svg?height=400&width=300",
+      image: "/poster5.jpg",
       type: "Marketing",
       aspectRatio: "3/4",
       date: "November 12, 2022",
@@ -172,13 +172,33 @@ export default function PortfolioPage() {
           {/* Main Poster Display */}
           <div className="container mx-auto px-4 mb-12">
             <div className="max-w-3xl mx-auto border border-zinc-800 rounded-lg p-2 bg-zinc-900/50">
-              <div className="relative aspect-[3/4] w-full">
-                <Image
-                  src={selectedItem.image || "/placeholder.svg"}
-                  alt={selectedItem.title}
-                  fill
-                  className="object-cover rounded"
-                />
+              <div className={`relative aspect-[${selectedItem.aspectRatio}] w-full min-h-[200px]`}>
+                {selectedItem.type === "Video" && selectedItem.url ? (
+                  selectedItem.url.endsWith(".mp4") ? (
+                    <video
+                      src={selectedItem.url}
+                      controls
+                      typeof="video/mp4"
+                      className="absolute top-0 left-0 w-full h-full rounded"
+                    />
+                  ) : (
+                    <iframe
+                      src={selectedItem.url}
+                      title={selectedItem.title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                      className="absolute top-0 left-0 w-full h-full rounded"
+                    ></iframe>
+                  )
+                ) : (
+                  <Image
+                    src={selectedItem.image || "/placeholder.svg"}
+                    alt={selectedItem.title}
+                    fill
+                    className="object-cover rounded"
+                  />
+                )}
               </div>
             </div>
           </div>

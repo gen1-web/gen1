@@ -31,13 +31,14 @@ const ServiceDetail = ({ service, onClose }) => {
       {/* Service Video/Image */}
       <div className="mb-12">
         <div className="relative aspect-video w-full bg-zinc-900 rounded-lg overflow-hidden">
-          <Image
-            src={service.image || "/placeholder.svg"}
-            alt={service.title}
-            fill
-            className="object-cover"
-            style={{ filter: "brightness(0.7)" }}
-          />
+          
+            <Image
+              src={service.image || "/placeholder.svg"}
+              alt={service.title}
+              fill
+              className="object-cover"
+              style={{ filter: "brightness(0.7)" }}
+            />
         </div>
       </div>
 
@@ -99,12 +100,24 @@ const ServiceDetail = ({ service, onClose }) => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {service.portfolioItems.map((item, index) => (
             <div key={index} className="relative aspect-[3/4] rounded-lg overflow-hidden">
-              <Image
-                src={item || "/placeholder.svg"}
-                alt={`Portfolio item ${index + 1}`}
-                fill
-                className="object-cover"
-              />
+              {service.title === "Video" && item.startsWith("http") ? (
+                <iframe
+                  src={item}
+                  title={`Portfolio video ${index + 1}`}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                  className="absolute top-0 left-0 w-full h-full rounded"
+                
+                ></iframe>
+              ) : (
+                <Image
+                  src={item || "/placeholder.svg"}
+                  alt={`Portfolio item ${index + 1}`}
+                  fill
+                  className="object-cover"
+                />
+              )}
             </div>
           ))}
         </div>

@@ -89,10 +89,7 @@ const services = [
       },
     ],
     portfolioItems: [
-      "/placeholder.svg",
-      "/placeholder.svg",
-      "/placeholder.svg",
-      "/placeholder.svg",
+      "https://res.cloudinary.com/dvgsiwacs/video/upload/v1749023873/hwhq59teserq7ipezyez.mp4"
     ],
   },
   {
