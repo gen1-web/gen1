@@ -25,12 +25,12 @@ const portfolioItems = [
     title: "Video Production",
     category: "Marketing Campaign",
     description: `Professional video production for your brand's marketing needs. We create engaging content that captures your audience's attention and drives results.
-    
     Our team of experts handles everything from concept to final delivery, ensuring high-quality production values throughout.`,
     tags: ["Production", "Editing", "Motion", "Branding"],
-    image: "/lost.jpg",
-    thumbnail: "/lost.jpg",
+    image: "/video1.png", // You might want a specific thumbnail for videos
+    thumbnail: "/video1.png",
     type: "Video",
+    videoUrl: "https://res.cloudinary.com/dvgsiwacs/video/upload/v1749023873/hwhq59teserq7ipezyez.mp4", // Example YouTube embed URL
   },
   {
     id: 3,
@@ -146,15 +146,27 @@ export default function PortfolioSection() {
           {/* Main Display */}
           <div className="lg:col-span-12 grid grid-cols-1 lg:grid-cols-12 gap-6 bg-zinc-900/50 rounded-3xl p-6 mb-6 relative">
             {/* Glow Effect on Hover */}
-            {/* Featured Image */}
+            {/* Featured Image/Video */}
             <div className="lg:col-span-5 flex items-center justify-center">
-              <div className="relative w-full max-w-md aspect-[3/4] overflow-hidden rounded-xl">
-                <Image
-                  src={selectedItem.image || "/placeholder.svg"}
-                  alt={selectedItem.title}
-                  fill
-                  className="object-cover"
-                />
+              <div className="relative w-full max-w-md aspect-video overflow-hidden rounded-xl bg-black">
+                {selectedItem.type === "Video" && selectedItem.videoUrl ? (
+                  <iframe
+                    src={selectedItem.videoUrl}
+                    title={selectedItem.title}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                    className="absolute top-0 left-0 w-full h-full"
+                  ></iframe>
+                ) : (
+                  <Image
+                    src={selectedItem.image || "/placeholder.svg"}
+                    alt={selectedItem.title}
+                    fill
+                    className="object-cover"
+                  />
+                )}
               </div>
             </div>
 
