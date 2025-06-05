@@ -12,6 +12,21 @@ export default function PartnerClients() {
     { id: 4, name: "Client 4",       image: "/aliE.jpg" },
     { id: 5, name: "Client 5",       image: "/aliE.jpg" },
     { id: 6, name: "Client 6",       image: "/aliE.jpg" },
+    { id: 7, name: "Quranic Media", image: "/aliE.jpg" },
+    { id: 8, name: "Client 2",       image: "/mugheera.png" },
+    { id: 9, name: "Client 3",       image: "/aliE.jpg" },
+    { id: 10, name: "Client 4",       image: "/aliE.jpg" },
+    { id: 11, name: "Client 5",       image: "/aliE.jpg" },
+    { id: 12, name: "Client 6",       image: "/aliE.jpg" },
+    { id: 13, name: "Quranic Media", image: "/aliE.jpg" },
+    { id: 14, name: "Client 2",       image: "/mugheera.png" },
+    { id: 15, name: "Client 3",       image: "/aliE.jpg" },
+    { id: 16, name: "Client 4",       image: "/aliE.jpg" },
+    { id: 17, name: "Client 5",       image: "/aliE.jpg" },
+    { id: 18, name: "Client 6",       image: "/aliE.jpg" },
+    { id: 19, name: "Quranic Media", image: "/aliE.jpg" },
+    { id: 20, name: "Client 2",       image: "/mugheera.png" },
+    { id: 21, name: "Client 3",       image: "/aliE.jpg" }
   ]
 
   return (
