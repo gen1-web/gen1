@@ -52,8 +52,8 @@ const portfolioItems = [
     
     From initial concept to day-of execution, our team ensures your event gets the attention it deserves.`,
     tags: ["Events", "Promotion", "Design", "Strategy"],
-    image: "/lost.jpg",
-    thumbnail: "/lost.jpg",
+    image: "/poster4.jpg",
+    thumbnail: "/poster4.jpg",
     type: "Graphic Design",
   },
   {

@@ -1,19 +1,18 @@
-"use client"
-import { useRef, useEffect } from "react"
-import Image from "next/image"
-import { gsap } from "gsap"
+"use client";
+import { useRef, useEffect } from "react";
+import Image from "next/image";
+import { gsap } from "gsap";
 
 export default function PartnerClients() {
-
   const partners = [
     { id: 1, name: "Quranic Media", image: "/1.png" },
-    { id: 2, name: "Client 2",       image: "/2.png" },
-    { id: 3, name: "Client 3",       image: "/3.png" },
-    { id: 4, name: "Client 4",       image: "/4.png" },
-    { id: 5, name: "Client 5",       image: "/5.png" },
-    { id: 6, name: "Client 6",       image: "/6.png" },
+    { id: 2, name: "Client 2", image: "/2.png" },
+    { id: 3, name: "Client 3", image: "/3.png" },
+    { id: 4, name: "Client 4", image: "/4.png" },
+    { id: 5, name: "Client 5", image: "/5.png" },
+    { id: 6, name: "Client 6", image: "/6.png" },
     { id: 7, name: "Quranic Media", image: "/7.png" },
-  ]
+  ];
 
   return (
     <section className="py-16 px-4 ml-8">
@@ -26,14 +25,13 @@ export default function PartnerClients() {
             {partners.map((i) => (
               <div
                 key={i.id}
-                className="w-[100px] h-[100px] rounded-full border-2 border-secondary overflow-hidden transition-all duration-700 ease-out hover:scale-105"
+                className="w-[100px] h-[100px] rounded-full border-2 border-secondary overflow-hidden relative transition-all duration-700 ease-out hover:scale-105"
               >
                 <Image
                   src={i.image}
                   alt={i.name}
-                  width={200}
-                  height={200}
-                  className="object-cover bg-gray-200"
+                  layout="fill"
+                  className="object-cover bg-gray-100"
                 />
               </div>
             ))}
@@ -41,5 +39,5 @@ export default function PartnerClients() {
         </div>
       </div>
     </section>
-  )
+  );
 }
