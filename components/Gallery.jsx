@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react"; // Added useState
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "lucide-react";
@@ -17,7 +17,6 @@ const posterData = [
   { src: "/poster7.jpg", alt: "The Court Flush" },
   { src: "/poster8.jpg", alt: "Soulful Ties" },
   { src: "/football.jpg", alt: "The Problem with Consent" },
-  { src: "/poster1.png", alt: "Soulful Ties" }, // Note: duplicate src, ensure alt is unique or key is handled
   { src: "/poster11.jpg", alt: "The Problem with Consent" },
   { src: "/poster12.jpg", alt: "The Court Flush" },
   { src: "/poster13.jpg", alt: "Soulful Ties" },
@@ -28,75 +27,30 @@ const posterData = [
 
 const Gallery = () => {
   const wrapperRef = useRef(null);
-  const [isMobileView, setIsMobileView] = useState(false);
 
-  // Effect for setting initial isMobileView and attaching resize listener
-  useEffect(() => {
-    const checkMobile = () => window.innerWidth < 768;
-    setIsMobileView(checkMobile()); // Set initial value
-
-    const handleResize = () => {
-      setIsMobileView(checkMobile());
-    };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  // Effect for GSAP animation, re-runs when isMobileView changes
   useEffect(() => {
     const wrapper = wrapperRef.current;
-    // Ensure wrapper and children exist, and that we have enough children for the animation logic
-    // (at least one item to move, though more are expected due to duplication)
-    if (!wrapper || wrapper.children.length === 0) {
-      return;
-    }
+    if (!wrapper) return;
 
-    // Kill previous timeline if it exists
-    if (wrapper.gsapTimeline) {
-      wrapper.gsapTimeline.kill();
-    }
-    gsap.set(wrapper, { x: 0 }); // Reset position before new animation
+    const totalWidth = wrapper.scrollWidth / 2; // because we duplicate the posters
+    gsap.set(wrapper, { x: 0 });
 
-    const actualPosterWidth = isMobileView ? 200 : 350;
-    const gapWidth = isMobileView ? 16 : 36; // Tailwind gap-4 is 1rem (16px), gap-9 is 2.25rem (36px)
-    const totalWidthPerItem = actualPosterWidth + gapWidth;
-
-    const duration = isMobileView ? 2.5 : 1.5;
-    const repeatDelay = isMobileView ? 2.5 : 4.5;
-
-    const tl = gsap.timeline({
+    const tl = gsap.to(wrapper, {
+      x: `-=${totalWidth}`,
+      duration: 60,
+      ease: "none",
       repeat: -1,
-      repeatDelay,
-      defaults: { ease: "power2.inOut" }
     });
 
-    tl.to(wrapper, {
-      x: `-=${totalWidthPerItem}`,
-      duration,
-      ease: "power2.inOut",
-      onComplete: () => {
-        wrapper.appendChild(wrapper.children[0]);
-        gsap.set(wrapper, { x: 0 });
-      },
-    });
+    return () => tl.kill();
+  }, []);
 
-    wrapper.gsapTimeline = tl; // Store timeline for cleanup
-
-    return () => {
-      if (wrapper.gsapTimeline) {
-        wrapper.gsapTimeline.kill();
-        delete wrapper.gsapTimeline; // Clean up property
-      }
-    };
-  }, [isMobileView]); // Re-run when isMobileView changes
-
-  // Duplicate posters for seamless loop
-  const displayPosters = [...posterData, ...posterData];
+  const displayPosters = [...posterData, ...posterData]; // duplicate for seamless scroll
 
   return (
     <section className="relative">
       {/* Hero Text */}
-      <div className="container mx-auto text-center px-4">
+      <div className="container mx-auto text-center px-4 mb-16">
         <h1 className="text-5xl md:text-7xl font-bold leading-tight tracking-tight mb-4 text-white">
           First in <span className="text-red-600">Creativity</span>, First in{" "}
           <span className="text-red-600">Results</span>.
@@ -108,26 +62,23 @@ const Gallery = () => {
 
       {/* Gallery */}
       <div className="relative w-full overflow-hidden">
-        {/* Red Glow */}
         <div className="absolute inset-0 bg-gradient-radial from-red-600/30 via-red-900/20 to-transparent" />
 
         <div className="relative h-full w-full bg-[radial-gradient(ellipse_at_50%_50%,_#cc0000_0%,_#000000_80%)]">
-          <div 
-            className={`curved-gallery-container relative z-10 py-6 overflow-hidden ${isMobileView ? 'w-[200px] mx-auto' : 'px-4 w-full'}`}
-          >
+          <div className="relative z-10 py-6 overflow-hidden">
             <div
-              className={`poster-wrapper flex w-max ${isMobileView ? 'gap-4' : 'gap-9'}`}
+              className="flex w-max gap-9"
               ref={wrapperRef}
             >
               {displayPosters.map((poster, index) => (
-                <div className="poster-item flex-shrink-0" key={`${poster.alt}-${index}`}> {/* Ensure unique key */}
+                <div className="flex-shrink-0" key={`${poster.alt}-${index}`}>
                   <Image
                     src={poster.src}
                     alt={poster.alt}
-                    width={isMobileView ? 200 : 350}
-                    height={isMobileView ? 300 : 500}
+                    width={350}
+                    height={500}
                     className="rounded-lg object-cover shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl"
-                    priority={index < 5} // Prioritize loading for initial images
+                    priority={index < 5}
                   />
                 </div>
               ))}

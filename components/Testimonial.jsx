@@ -11,7 +11,8 @@ const Testimonial = () => {
             <Image src="/commas.svg" alt="Quote Mark" width={60} height={60} />
           </div>
           {/* Testimonial Text */}
-          <p className="text-white text-2xl font-sans tracking-wide transform scale-x-110 mb-4">
+          <p className="text-white text-xl sm:text-lg md:text-2xl font-sans tracking-wide transform scale-x-110 mb-4">
+
             Gen1 Solutions is a leading creative agency, dedicated to delivering innovative and purpose-driven content
             for global Islamic organizations.
             They <span className="text-red-600">designed some amazing graphics</span> for my YouTube channel.
