@@ -62,7 +62,7 @@ export default function ServicesSection() {
             {services.map((service, idx) => (
               <div
                 key={idx}
-                className="group relative service-card bg-zinc-900 rounded-3xl p-6 flex flex-col justify-between h-80 transition-colors duration-500 ease-in-out overflow-hidden hover:bg-[#CC0000]"
+                className="group relative service-card bg-zinc-700 rounded-3xl p-6 flex flex-col justify-between h-80 transition-colors duration-500 ease-in-out overflow-hidden hover:bg-[#CC0000]"
               >
                 <div className="relative z-10">
                   <div className="TITLE-DIV bg-zinc-800 text-white rounded-full px-4 py-2 inline-block font-semibold w-fit transition-all duration-300 group-hover:bg-white group-hover:text-red-600">
