@@ -35,8 +35,8 @@ const AboutHero = () => {
         <div className="md:pr-12 flex  justify-end">
           <Image src={"/Gen1.svg"}
             alt="Our Story"
-            width={400}
-            height={400}
+            width={700}
+            height={700}
             className="w-1/2 "
             />
         </div>
