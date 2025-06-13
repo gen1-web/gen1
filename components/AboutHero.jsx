@@ -33,7 +33,7 @@ const AboutHero = () => {
         </div>
         {/* Right: Image */}
         <div className="md:pr-12 flex  justify-end">
-          <Image src={"/aliE.jpg"}
+          <Image src={"/Gen1.svg"}
             alt="Our Story"
             width={400}
             height={400}
