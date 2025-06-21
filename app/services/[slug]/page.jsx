@@ -89,7 +89,9 @@ const services = [
       },
     ],
     portfolioItems: [
-      "https://res.cloudinary.com/dvgsiwacs/video/upload/v1749023873/hwhq59teserq7ipezyez.mp4"
+      "https://res.cloudinary.com/dvgsiwacs/video/upload/v1749023873/hwhq59teserq7ipezyez.mp4",
+      "https://res.cloudinary.com/dvgsiwacs/video/upload/v1750491658/Copy_of_7_Deadly_Sins_in_Islam_jv9h3j.mp4",
+      "https://res.cloudinary.com/dvgsiwacs/video/upload/v1750492162/How_Allah_Rewards_a_Believer_iqx1zn.mp4"
     ],
   },
   {

@@ -109,6 +109,32 @@ export default function PortfolioPage() {
       fullDescription:
         "Gen1 Solutions is a leading creative agency, dedicated to delivering innovative and purpose-driven content for global Islamic organizations. With a deep-rooted commitment to Islamic values, we are proud to offer Halal creative solutions that inspire and connect with audiences around the world, crafting narratives that touch hearts and uplift communities.",
     },
+    {
+      id: 9,
+      title: "7 Deadly Sins",
+      category: "Social Media Campaign",
+      url: "https://res.cloudinary.com/dvgsiwacs/video/upload/v1750491658/Copy_of_7_Deadly_Sins_in_Islam_jv9h3j.mp4",
+      type: "Video",
+      aspectRatio: "16/9",
+      date: "May 15, 2023",
+      description:
+        "Creating a compelling brand video that captures the essence of Islamic values while engaging a modern audience.",
+      fullDescription:
+        "Gen1 Solutions is a leading creative agency, dedicated to delivering innovative and purpose-driven content for global Islamic organizations. With a deep-rooted commitment to Islamic values, we are proud to offer Halal creative solutions that inspire and connect with audiences around the world, crafting narratives that touch hearts and uplift communities.",
+    },
+    {
+      id: 9,
+      title: "How Allah Rewards a Believer",
+      category: "Social Media Campaign",
+      url: "https://res.cloudinary.com/dvgsiwacs/video/upload/v1750492162/How_Allah_Rewards_a_Believer_iqx1zn.mp4",
+      type: "Video",
+      aspectRatio: "16/9",
+      date: "May 15, 2023",
+      description:
+        "Creating a compelling brand video that captures the essence of Islamic values while engaging a modern audience.",
+      fullDescription:
+        "Gen1 Solutions is a leading creative agency, dedicated to delivering innovative and purpose-driven content for global Islamic organizations. With a deep-rooted commitment to Islamic values, we are proud to offer Halal creative solutions that inspire and connect with audiences around the world, crafting narratives that touch hearts and uplift communities.",
+    },
   ]
 
   // Filter categories
