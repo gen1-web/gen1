@@ -93,7 +93,7 @@ const portfolioItems = [
     videoUrl: "https://res.cloudinary.com/dvgsiwacs/video/upload/v1750492162/How_Allah_Rewards_a_Believer_iqx1zn.mp4", // Example YouTube embed URL
   },
   {
-    id: 7,
+    id: 8,
     title: "Video Production",
     category: "Eye Opening",
     description: `Professional video production for your brand's marketing needs. We create engaging content that captures your audience's attention and drives results.
