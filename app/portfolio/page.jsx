@@ -151,6 +151,20 @@ export default function PortfolioPage() {
       fullDescription:
         "Gen1 Solutions is a leading creative agency, dedicated to delivering innovative and purpose-driven content for global Islamic organizations. With a deep-rooted commitment to Islamic values, we are proud to offer Halal creative solutions that inspire and connect with audiences around the world, crafting narratives that touch hearts and uplift communities.",
     },
+    {
+      id: 12,
+      title: "Ramadan 2025 Promo",
+      category: "Social Media Campaign",
+      url: "https://res.cloudinary.com/dvgsiwacs/video/upload/v1750493606/Ramadan_2025_Promo_bkxqvf.mp4",
+      thumbnail: "/video5.png",
+      type: "Video",
+      aspectRatio: "16/9",
+      date: "May 15, 2023",
+      description:
+        "Creating a compelling brand video that captures the essence of Islamic values while engaging a modern audience.",
+      fullDescription:
+        "Gen1 Solutions is a leading creative agency, dedicated to delivering innovative and purpose-driven content for global Islamic organizations. With a deep-rooted commitment to Islamic values, we are proud to offer Halal creative solutions that inspire and connect with audiences around the world, crafting narratives that touch hearts and uplift communities.",
+    },
   ]
 
   // Filter categories
