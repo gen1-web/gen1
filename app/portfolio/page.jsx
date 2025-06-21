@@ -19,7 +19,7 @@ export default function PortfolioPage() {
       id: 1,
       title: "Family Fun Day",
       category: "Social Media Campaign",
-      image: "/placeholder.svg?height=400&width=300",
+      image: "/poster11.jpg?height=400&width=300",
       type: "Graphic Design",
       aspectRatio: "3/4",
       date: "June 23, 2023",
