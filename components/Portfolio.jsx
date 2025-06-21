@@ -75,8 +75,8 @@ const portfolioItems = [
     description: `Professional video production for your brand's marketing needs. We create engaging content that captures your audience's attention and drives results.
     Our team of experts handles everything from concept to final delivery, ensuring high-quality production values throughout.`,
     tags: ["Production", "Editing", "Motion", "Branding"],
-    image: "/video1.png", // You might want a specific thumbnail for videos
-    thumbnail: "/video1.png",
+    image: "/video4.png", // You might want a specific thumbnail for videos
+    thumbnail: "/video4.png",
     type: "Video",
     videoUrl: "https://res.cloudinary.com/dvgsiwacs/video/upload/v1750491658/Copy_of_7_Deadly_Sins_in_Islam_jv9h3j.mp4", // Example YouTube embed URL
   },
@@ -87,10 +87,22 @@ const portfolioItems = [
     description: `Professional video production for your brand's marketing needs. We create engaging content that captures your audience's attention and drives results.
     Our team of experts handles everything from concept to final delivery, ensuring high-quality production values throughout.`,
     tags: ["Production", "Editing", "Motion", "Branding"],
-    image: "/video1.png", // You might want a specific thumbnail for videos
-    thumbnail: "/video1.png",
+    image: "/video3.png", // You might want a specific thumbnail for videos
+    thumbnail: "/video3.png",
     type: "Video",
     videoUrl: "https://res.cloudinary.com/dvgsiwacs/video/upload/v1750492162/How_Allah_Rewards_a_Believer_iqx1zn.mp4", // Example YouTube embed URL
+  },
+  {
+    id: 7,
+    title: "Video Production",
+    category: "Eye Opening",
+    description: `Professional video production for your brand's marketing needs. We create engaging content that captures your audience's attention and drives results.
+    Our team of experts handles everything from concept to final delivery, ensuring high-quality production values throughout.`,
+    tags: ["Production", "Editing", "Motion", "Branding"],
+    image: "/video2.png", // You might want a specific thumbnail for videos
+    thumbnail: "/video2.png",
+    type: "Video",
+    videoUrl: "https://res.cloudinary.com/dvgsiwacs/video/upload/v1750492593/Turn_Back_to_Allah_ipcghe.mp4", // Example YouTube embed URL
   },
 ];
 
