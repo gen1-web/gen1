@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
+
 // Configure nodemailer transport
 const transporter = nodemailer.createTransport({
   service: 'gmail',  // Use Gmail as the email service
@@ -14,10 +15,10 @@ const transporter = nodemailer.createTransport({
 export async function POST(req) {
   try {
     const body = await req.json();
-    const { name, email, subject, message } = body;
+    const { name, email, phone, linkedin,service,details } = body;
 
     // Validate required fields
-    if (!name || !email || !subject || !message) {
+    if (!name || !email || !service || !details) {
       return NextResponse.json(
         { error: "All fields are required" },
         { status: 400 }
@@ -27,20 +28,22 @@ export async function POST(req) {
     // Configure email content
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: process.env.RECIPIENT_EMAIL, // Email address receiving enquiries
-      subject: `New Enquiry from ${name}: ${subject}`,
+      to: process.env.EMAIL_USER, 
+      subject: `New Enquiry from ${name}: ${email}`,
       html: `
         <h2>New Contact Form Submission</h2>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Subject:</strong> ${subject}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message}</p>
+        <p><strong>LinkedIn:</strong> ${linkedin}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Service:</strong> ${service}</p>
+        <p><strong>details:</strong> ${details}</p>
       `
     };
 
     // Send email
     await transporter.sendMail(mailOptions);
+    //console.log(mailOptions)
 
     return NextResponse.json(
       { message: "Email sent successfully" },

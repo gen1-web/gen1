@@ -1,9 +1,11 @@
 "use client"
 import { useState } from "react"
+import axios from 'axios'
 import { Button } from "@/components/ui/button"
 import { Calendar, Mail, Phone, Facebook, Instagram, Linkedin,Dribbble } from "lucide-react"
 import Image from "next/image"
 import { ArrowLeft } from "lucide-react"
+
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -13,6 +15,8 @@ const ContactForm = () => {
     service: "",
     details: "",
   })
+  const [isLoading, setIsLoading] = useState(false)
+  const [message, setMessage] = useState({ type: '', text: '' })
 
   const handleInputChange = (e) => {
     const { name, value } = e.target
@@ -22,10 +26,34 @@ const ContactForm = () => {
     }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Handle form submission here
-    alert("Form submitted:", formData)
+    setIsLoading(true)
+    setMessage({ type: '', text: '' })
+
+    try {
+      const response = await axios.post('/api/email', formData)
+      setMessage({ 
+        type: 'success', 
+        text: 'Thank you for your message! We will get back to you soon.' 
+      })
+      // Clear form
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        linkedin: "",
+        service: "",
+        details: "",
+      })
+    } catch (error) {
+      setMessage({ 
+        type: 'error', 
+        text: error.response?.data?.message || 'Something went wrong. Please try again later.' 
+      })
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   return (
@@ -90,6 +118,13 @@ const ContactForm = () => {
 
           {/* Right Side - Contact Form */}
           <div className="bg-red-600 rounded-3xl p-8">
+            {message.text && (
+              <div className={`mb-4 p-4 rounded ${
+                message.type === 'success' ? 'bg-green-600 text-white' : 'bg-red-700 text-white'
+              }`}>
+                {message.text}
+              </div>
+            )}
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Name and Email Row */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -98,11 +133,11 @@ const ContactForm = () => {
                   <input
                     type="text"
                     name="name"
+                    required
                     value={formData.name}
                     onChange={handleInputChange}
+                    className="w-full px-4 py-2 rounded-md bg-red-700 text-white placeholder-red-300 focus:outline-none focus:ring-2 focus:ring-red-400"
                     placeholder="Enter your name"
-                    className="w-full bg-transparent border-b border-white/30 text-white placeholder-white/70 pb-2 focus:border-white focus:outline-none transition-colors"
-                    required
                   />
                 </div>
                 <div>
@@ -110,11 +145,11 @@ const ContactForm = () => {
                   <input
                     type="email"
                     name="email"
+                    required
                     value={formData.email}
                     onChange={handleInputChange}
+                    className="w-full px-4 py-2 rounded-md bg-red-700 text-white placeholder-red-300 focus:outline-none focus:ring-2 focus:ring-red-400"
                     placeholder="Enter your email"
-                    className="w-full bg-transparent border-b border-white/30 text-white placeholder-white/70 pb-2 focus:border-white focus:outline-none transition-colors"
-                    required
                   />
                 </div>
               </div>
@@ -122,14 +157,14 @@ const ContactForm = () => {
               {/* Phone and LinkedIn Row */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-white text-sm font-medium mb-2">Phone Number</label>
+                  <label className="block text-white text-sm font-medium mb-2">Phone</label>
                   <input
                     type="tel"
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    placeholder="Enter your number"
-                    className="w-full bg-transparent border-b border-white/30 text-white placeholder-white/70 pb-2 focus:border-white focus:outline-none transition-colors"
+                    className="w-full px-4 py-2 rounded-md bg-red-700 text-white placeholder-red-300 focus:outline-none focus:ring-2 focus:ring-red-400"
+                    placeholder="Enter your phone"
                   />
                 </div>
                 <div>
@@ -139,8 +174,8 @@ const ContactForm = () => {
                     name="linkedin"
                     value={formData.linkedin}
                     onChange={handleInputChange}
-                    placeholder="Enter your LinkedIn"
-                    className="w-full bg-transparent border-b border-white/30 text-white placeholder-white/70 pb-2 focus:border-white focus:outline-none transition-colors"
+                    className="w-full px-4 py-2 rounded-md bg-red-700 text-white placeholder-red-300 focus:outline-none focus:ring-2 focus:ring-red-400"
+                    placeholder="Your LinkedIn profile"
                   />
                 </div>
               </div>
@@ -150,53 +185,43 @@ const ContactForm = () => {
                 <label className="block text-white text-sm font-medium mb-2">Service</label>
                 <select
                   name="service"
+                  required
                   value={formData.service}
                   onChange={handleInputChange}
-                  className="w-full bg-transparent border-b border-white/30 text-white pb-2 focus:border-white focus:outline-none transition-colors appearance-none cursor-pointer"
-                  required
+                  className="w-full px-4 py-2 rounded-md bg-red-700 text-white placeholder-red-300 focus:outline-none focus:ring-2 focus:ring-red-400"
                 >
-                  <option value="" className="bg-red-600 text-white">
-                    Choose any service
-                  </option>
-                  <option value="graphic-design" className="bg-red-600 text-white">
-                    Graphic Design
-                  </option>
-                  <option value="video-production" className="bg-red-600 text-white">
-                    Video Production
-                  </option>
-                  <option value="web-development" className="bg-red-600 text-white">
-                    Web Development
-                  </option>
-                  <option value="marketing" className="bg-red-600 text-white">
-                    Marketing
-                  </option>
+                  <option value="">Select a service</option>
+                  <option value="Video">Video</option>
+                  <option value="Design">Design</option>
+                  <option value="Marketing">Marketing</option>
+                  <option value="Web Development">Web Development</option>
                 </select>
               </div>
 
-              {/* Details Textarea */}
+              {/* Project Details */}
               <div>
-                <label className="block text-white text-sm font-medium mb-2">Details</label>
+                <label className="block text-white text-sm font-medium mb-2">Project Details</label>
                 <textarea
                   name="details"
+                  required
                   value={formData.details}
                   onChange={handleInputChange}
-                  placeholder="Your description"
                   rows={4}
-                  className="w-full bg-transparent border-b border-white/30 text-white placeholder-white/70 pb-2 focus:border-white focus:outline-none transition-colors resize-none"
-                  required
+                  className="w-full px-4 py-2 rounded-md bg-red-700 text-white placeholder-red-300 focus:outline-none focus:ring-2 focus:ring-red-400"
+                  placeholder="Tell us about your project"
                 />
               </div>
 
               {/* Submit Button */}
-              <div className="pt-4">
-                <Button
-                  type="submit"
-                  className="bg-white text-black hover:bg-white/90 rounded-full px-8 py-3 flex items-center gap-2 font-medium transition-colors"
-                >
-                  <Calendar className="h-4 w-4" />
-                  Book a FREE Consultation
-                </Button>
-              </div>
+              <button
+                type="submit"
+                disabled={isLoading}
+                className={`w-full bg-white text-red-600 py-3 px-6 rounded-md font-semibold hover:bg-red-100 transition-colors ${
+                  isLoading ? 'opacity-75 cursor-not-allowed' : ''
+                }`}
+              >
+                {isLoading ? 'Sending...' : 'Send Message'}
+              </button>
             </form>
           </div>
         </div>
