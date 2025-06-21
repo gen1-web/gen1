@@ -38,11 +38,11 @@ export default function PortfolioPage() {
       title: "Brand Video",
       category: "Social Media Campaign",
       url: "https://res.cloudinary.com/dvgsiwacs/video/upload/v1749023873/hwhq59teserq7ipezyez.mp4",
+      thumbnail: "/video1.png",
       type: "Video",
       aspectRatio: "16/9",
       date: "May 15, 2023",
-      description:
-        "Creating a compelling brand video that captures the essence of Islamic values while engaging a modern audience.",
+      description: "Creating a compelling brand video that captures the essence of Islamic values while engaging a modern audience.",
       fullDescription:
         "Gen1 Solutions is a leading creative agency, dedicated to delivering innovative and purpose-driven content for global Islamic organizations. With a deep-rooted commitment to Islamic values, we are proud to offer Halal creative solutions that inspire and connect with audiences around the world, crafting narratives that touch hearts and uplift communities.",
     },
@@ -114,19 +114,7 @@ export default function PortfolioPage() {
       title: "7 Deadly Sins",
       category: "Social Media Campaign",
       url: "https://res.cloudinary.com/dvgsiwacs/video/upload/v1750491658/Copy_of_7_Deadly_Sins_in_Islam_jv9h3j.mp4",
-      type: "Video",
-      aspectRatio: "16/9",
-      date: "May 15, 2023",
-      description:
-        "Creating a compelling brand video that captures the essence of Islamic values while engaging a modern audience.",
-      fullDescription:
-        "Gen1 Solutions is a leading creative agency, dedicated to delivering innovative and purpose-driven content for global Islamic organizations. With a deep-rooted commitment to Islamic values, we are proud to offer Halal creative solutions that inspire and connect with audiences around the world, crafting narratives that touch hearts and uplift communities.",
-    },
-    {
-      id: 9,
-      title: "How Allah Rewards a Believer",
-      category: "Social Media Campaign",
-      url: "https://res.cloudinary.com/dvgsiwacs/video/upload/v1750492162/How_Allah_Rewards_a_Believer_iqx1zn.mp4",
+      thumbnail: "/video3.png",
       type: "Video",
       aspectRatio: "16/9",
       date: "May 15, 2023",
@@ -137,9 +125,24 @@ export default function PortfolioPage() {
     },
     {
       id: 10,
+      title: "How Allah Rewards a Believer",
+      category: "Social Media Campaign",
+      url: "https://res.cloudinary.com/dvgsiwacs/video/upload/v1750492162/How_Allah_Rewards_a_Believer_iqx1zn.mp4",
+      thumbnail: "/video4.png",
+      type: "Video",
+      aspectRatio: "16/9",
+      date: "May 15, 2023",
+      description:
+        "Creating a compelling brand video that captures the essence of Islamic values while engaging a modern audience.",
+      fullDescription:
+        "Gen1 Solutions is a leading creative agency, dedicated to delivering innovative and purpose-driven content for global Islamic organizations. With a deep-rooted commitment to Islamic values, we are proud to offer Halal creative solutions that inspire and connect with audiences around the world, crafting narratives that touch hearts and uplift communities.",
+    },
+    {
+      id: 11,
       title: "Turn Back to Allah",
       category: "Social Media Campaign",
       url: "https://res.cloudinary.com/dvgsiwacs/video/upload/v1750492593/Turn_Back_to_Allah_ipcghe.mp4",
+      thumbnail: "/video2.png",
       type: "Video",
       aspectRatio: "16/9",
       date: "May 15, 2023",
@@ -341,12 +344,31 @@ export default function PortfolioPage() {
                   >
                     <div className="bg-zinc-900 rounded-lg overflow-hidden h-full group hover:bg-zinc-800 transition-colors cursor-pointer">
                       <div className={`relative aspect-[${item.aspectRatio}] w-full`}>
-                        <Image
-                          src={item.image || "/placeholder.svg"}
-                          alt={item.title}
-                          fill
-                          className="object-cover transition-transform duration-500 group-hover:scale-105"
-                        />
+                        {item.type === "Video" ? (
+                          <div className="relative w-full h-full">
+                            <Image
+                              src={item.thumbnail || "/video.png"}
+                              alt={item.title}
+                              fill
+                              className="object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
+                            <div className="absolute inset-0 flex items-center justify-center bg-black/50">
+                              <div className="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        ) : (
+                          <Image
+                            src={item.image || "/placeholder.svg"}
+                            alt={item.title}
+                            fill
+                            className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          />
+                        )}
                       </div>
                       <div className="p-4">
                         <div className="text-zinc-500 text-sm mb-1">{item.category}</div>
