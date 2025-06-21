@@ -104,6 +104,18 @@ const portfolioItems = [
     type: "Video",
     videoUrl: "https://res.cloudinary.com/dvgsiwacs/video/upload/v1750492593/Turn_Back_to_Allah_ipcghe.mp4", // Example YouTube embed URL
   },
+  {
+    id: 9,
+    title: "Video Production",
+    category: "Ramadan Campaign",
+    description: `Professional video production for your brand's marketing needs. We create engaging content that captures your audience's attention and drives results.
+    Our team of experts handles everything from concept to final delivery, ensuring high-quality production values throughout.`,
+    tags: ["Production", "Editing", "Motion", "Branding"],
+    image: "/video5.png", // You might want a specific thumbnail for videos
+    thumbnail: "/video5.png",
+    type: "Video",
+    videoUrl:"https://res.cloudinary.com/dvgsiwacs/video/upload/v1750493606/Ramadan_2025_Promo_bkxqvf.mp4"
+  },
 ];
 
 // Filter categories
