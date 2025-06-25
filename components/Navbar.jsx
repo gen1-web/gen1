@@ -19,7 +19,7 @@ const Navbar = () => {
       <div className="hidden md:flex items-center">
         <nav className="bg-[#141414] backdrop-blur-sm rounded-full px-6 py-2 mx-4 ml-45">
           <ul className="flex space-x-8 justify-center w-full">
-            {['Home', 'Services', 'Portfolio', 'Case Studies', 'Our Story'].map((text, idx) => (
+            {['Home', 'Services', 'Portfolio', 'Our Story'].map((text, idx) => (
               <li key={idx}>
                 <Link
                   href={text === 'Home' ? '/' : `/${text.toLowerCase().replace(/ /g, '-')}`}
