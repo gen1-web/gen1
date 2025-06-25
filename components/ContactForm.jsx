@@ -97,15 +97,15 @@ const ContactForm = () => {
 
             {/* Social Media Icons */}
             <div className="flex gap-4">
-              <Link href="https://www.facebook.com/gen1solutions" className="text-white hover:text-red-600 transition-colors">
+              <a href="https://www.facebook.com/gen1solutions" className="text-white hover:text-red-600 transition-colors">
                 <Facebook className="h-5 w-5" />
-              </Link>
-              <Link href="https://www.instagram.com/gen1solutions" className="text-white hover:text-red-600 transition-colors">
+              </a>
+              <a href="https://www.instagram.com/gen1solutions" className="text-white hover:text-red-600 transition-colors">
                 <Instagram className="h-5 w-5" />
-              </Link>
-              <Link href="https://www.linkedin.com/company/gen1solutions" className="text-white hover:text-red-600 transition-colors">
+              </a>
+              <a href="https://www.linkedin.com/company/gen1solutions" className="text-white hover:text-red-600 transition-colors">
                 <Linkedin className="h-5 w-5" />
-              </Link>
+              </a>
             </div>
           </div>
 
