@@ -2,9 +2,10 @@
 import { useState } from "react"
 import axios from 'axios'
 import { Button } from "@/components/ui/button"
-import { Calendar, Mail, Phone, Facebook, Instagram, Linkedin,Dribbble } from "lucide-react"
+import { Calendar, Mail, Phone, Facebook, Instagram, Linkedin,Dribbble, Link } from "lucide-react"
 import Image from "next/image"
 import { ArrowLeft } from "lucide-react"
+import Link from "next/link"
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -96,23 +97,15 @@ const ContactForm = () => {
 
             {/* Social Media Icons */}
             <div className="flex gap-4">
-              <a href="#" className="text-white hover:text-red-600 transition-colors">
+              <Link href="https://www.facebook.com/gen1solutions" className="text-white hover:text-red-600 transition-colors">
                 <Facebook className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-white hover:text-red-600 transition-colors">
+              </Link>
+              <Link href="https://www.instagram.com/gen1solutions" className="text-white hover:text-red-600 transition-colors">
                 <Instagram className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-white hover:text-red-600 transition-colors">
+              </Link>
+              <Link href="https://www.linkedin.com/company/gen1solutions" className="text-white hover:text-red-600 transition-colors">
                 <Linkedin className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-white hover:text-red-600 transition-colors">
-                <div className="w-5 h-5 bg-white rounded-sm flex items-center justify-center">
-                  <span className="text-black text-xs font-bold">Be</span>
-                </div>
-              </a>
-              <a href="#" className="text-white hover:text-red-600 transition-colors">
-                <Dribbble className="h-5 w-5" />
-              </a>
+              </Link>
             </div>
           </div>
 
