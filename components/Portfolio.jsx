@@ -12,9 +12,8 @@ const portfolioItems = [
     id: 1,
     title: "Lost Poster",
     category: "Social Media Campaign",
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nis.
-    
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nis.`,
+    description: `A comprehensive session promotion campaign designed to increase visibility and drive sales. Our strategic approach combines traditional and digital marketing techniques.
+    We work closely with authors and publishers to create customized campaigns that reach the right audience at the right time.`,
     tags: ["Tag 1", "Tag 2", "Tag 3", "Tag 4"],
     image: "/lost.jpg",
     thumbnail: "/lost.jpg",
@@ -37,7 +36,6 @@ const portfolioItems = [
     title: "Turn the Page",
     category: "Book Campaign",
     description: `A comprehensive book promotion campaign designed to increase visibility and drive sales. Our strategic approach combines traditional and digital marketing techniques.
-    
     We work closely with authors and publishers to create customized campaigns that reach the right audience at the right time.`,
     tags: ["Publishing", "Marketing", "Design", "Social"],
     image: "/lost.jpg",
@@ -61,7 +59,6 @@ const portfolioItems = [
     title: "UEFA Champions League",
     category: "Sports Marketing",
     description: `Comprehensive sports marketing campaign designed to engage fans and drive viewership. Our approach combines digital and traditional marketing techniques to maximize reach.
-    
     We create compelling content that resonates with sports enthusiasts and casual viewers alike.`,
     tags: ["Sports", "Marketing", "Digital", "Broadcast"],
     image: "/lost.jpg",
