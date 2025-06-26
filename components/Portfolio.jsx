@@ -193,7 +193,7 @@ export default function PortfolioSection() {
             {/* Glow Effect on Hover */}
             {/* Featured Image/Video */}
             <div className="lg:col-span-5 flex items-center justify-center">
-              <div className="relative w-full max-w-md aspect-video overflow-hidden rounded-xl bg-black">
+              <div className="relative w-full max-w-md h-[400px] overflow-hidden rounded-xl bg-black">
                 {selectedItem.type === "Video" && selectedItem.videoUrl ? (
                   <iframe
                     src={selectedItem.videoUrl}

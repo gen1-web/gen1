@@ -126,7 +126,7 @@ const ServiceDetail = ({ service, onClose }) => {
       {/* CTA Button */}
       <div className="text-center mt-16 mb-8">
         <Button className="bg-red-600 hover:bg-red-700 text-white px-8 py-6 rounded-full text-lg">
-          Get Started with {service.title}
+          <Link href="/form">Get Started with {service.title}</Link>
         </Button>
       </div>
     </div>
