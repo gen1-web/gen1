@@ -175,10 +175,10 @@ const services = [
       },
     ],
     portfolioItems: [
-      "/placeholder.svg",
-      "/placeholder.svg",
-      "/placeholder.svg",
-      "/placeholder.svg",
+      "/poster11.jpg",
+      "/poster12.jpg",
+      "/poster13.jpg",
+      "/poster14.jpg",
     ],
   },
 ];

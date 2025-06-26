@@ -66,7 +66,7 @@ const Navbar = () => {
       {menuOpen && (
         <div className="absolute top-full left-0 w-full bg-[#141414] rounded-xl shadow-lg z-50 mt-4 md:hidden px-6 py-4">
           <ul className="space-y-4">
-            {['Home', 'Services', 'Portfolio', 'Case Studies', 'Our Story'].map((text, idx) => (
+            {['Home', 'Services', 'Portfolio', 'Our Story'].map((text, idx) => (
               <li key={idx}>
                 <Link
                   href={text === 'Home' ? '/' : `/${text.toLowerCase().replace(/ /g, '-')}`}
