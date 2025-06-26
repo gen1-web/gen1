@@ -104,7 +104,7 @@ const ServiceDetail = ({ service, onClose }) => {
                 <iframe
                   src={item}
                   title={`Portfolio video ${index + 1}`}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerPolicy="strict-origin-when-cross-origin"
                   allowFullScreen
                   className="absolute top-0 left-0 w-full h-full rounded"
