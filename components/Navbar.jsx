@@ -83,7 +83,7 @@ const Navbar = () => {
                 className="rounded-full bg-white text-black hover:bg-[#CC0000] border-0 flex items-center gap-2 px-4 w-full justify-center"
               >
                 <Calendar className="h-4 w-4" />
-                <span>Book a FREE Consultation</span>
+                <Link href="/form">Book a FREE Consultation</Link>
               </Button>
               <Link href="https://wa.me/923054559888" target="_blank">
                 <Button
