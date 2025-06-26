@@ -56,13 +56,13 @@ const portfolioItems = [
   },
   {
     id: 5,
-    title: "UEFA Champions League",
-    category: "Sports Marketing",
+    title: "Ice Skating",
+    category: "Marketing",
     description: `Comprehensive sports marketing campaign designed to engage fans and drive viewership. Our approach combines digital and traditional marketing techniques to maximize reach.
     We create compelling content that resonates with sports enthusiasts and casual viewers alike.`,
     tags: ["Sports", "Marketing", "Digital", "Broadcast"],
-    image: "/lost.jpg",
-    thumbnail: "/lost.jpg",
+    image: "/poster16.jpg",
+    thumbnail: "/poster16.jpg",
     type: "Marketing",
   },
   {
@@ -112,6 +112,27 @@ const portfolioItems = [
     thumbnail: "/video5.png",
     type: "Video",
     videoUrl:"https://res.cloudinary.com/dvgsiwacs/video/upload/v1750493606/Ramadan_2025_Promo_bkxqvf.mp4"
+  },
+  {
+    id: 10,
+    title: "Skii Trip",
+    category: "Marketing Campaign",
+    description: `A comprehensive session promotion campaign designed to increase visibility and drive sales. Our strategic approach combines traditional and digital marketing techniques.
+    We work closely with authors and publishers to create customized campaigns that reach the right audience at the right time.`,
+    tags: ["Marketing", "Marketing"],
+    image: "/poster7.jpg",
+    thumbnail: "/poster7.jpg",
+    type: "Marketing",
+  },
+  {
+    id: 11,
+    title: "Dar el Mecca",
+    category: "Web Development",
+    description: `A website developed for a travel agency, showcasing their services and destinations. The site features a modern design, user-friendly navigation, and responsive layout for optimal viewing on all devices.`,
+    tags: ["Web", "development", "Travel", "Agency"],
+    image: "/darelmecca.png",
+    thumbnail: "/darelmecca.png",
+    type: "Web Development",
   },
 ];
 
