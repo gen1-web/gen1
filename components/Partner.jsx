@@ -14,7 +14,8 @@ export default function PartnerClients() {
     { id: 4, name: "Client 4", image: "/Artboard 4.png" },
     { id: 5, name: "Client 5", image: "/Artboard 10.png" },
     { id: 6, name: "Client 6", image: "/Artboard 6.png" },
-    { id: 7, name: "Quranic Media", image: "/Artboard 7.png" },
+    { id: 7, name: "Quranic Media", image: "/Artboard 19.png" },
+    { id: 8, name: "Quranic Media", image: "/Artboard 18.png" }
   ];
 
   const allPartners = [...partners, ...partners];
