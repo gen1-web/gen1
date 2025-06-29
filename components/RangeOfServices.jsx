@@ -1,136 +1,144 @@
 "use client"
 import Image from "next/image"
-import { useEffect, useRef } from "react"
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
+import Link from "next/link"
+import { Search, Code, BarChart3, ArrowRight } from "lucide-react"
 
 const RangeOfServices = () => {
-  const imageRef = useRef(null)
-  const containerRef = useRef(null)
-  
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger)
-    
-    // Main image animation
-    const imageAnimation = gsap.from(imageRef.current, {
-      opacity: 0,
-      scale: 0.8,
-      y: 50,
-      duration: 1.5,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: imageRef.current,
-        start: "top center+=100",
-        end: "bottom center",
-        toggleActions: "play none none reverse"
-      }
-    })
 
-    // Create particles
-    const particles = []
-    const numParticles = 50 // Increased number of particles
-    const container = containerRef.current
-    const particleTypes = ['circle', 'square', 'line'] // Different particle shapes
-
-    for (let i = 0; i < numParticles; i++) {
-      const particle = document.createElement('div')
-      const type = particleTypes[Math.floor(Math.random() * particleTypes.length)]
-      
-      // Assign different classes based on particle type
-      const baseClasses = 'absolute bg-gradient-to-br from-red-600/20 to-red-800/20'
-      const typeClasses = {
-        circle: 'rounded-full w-2 h-2',
-        square: 'rounded-sm w-1.5 h-1.5 rotate-45',
-        line: 'w-3 h-0.5 rounded-full'
-      }
-      
-      particle.className = `${baseClasses} ${typeClasses[type]}`
-      container.appendChild(particle)
-      particles.push(particle)
-
-      // Distribute particles across the entire container with padding
-      const padding = 50 // Padding from edges
-      gsap.set(particle, {
-        x: gsap.utils.random(padding, container.offsetWidth - padding),
-        y: gsap.utils.random(padding, container.offsetHeight - padding),
-      })
-
-      // Create more varied movement patterns
-      const randomPath = () => {
-        const radius = gsap.utils.random(100, 300)
-        const angle = gsap.utils.random(0, 360)
-        const centerX = particle._gsap.x
-        const centerY = particle._gsap.y
-        
-        return {
-          duration: gsap.utils.random(15, 30),
-          motionPath: {
-            path: [
-              { x: centerX, y: centerY },
-              { x: centerX + radius * Math.cos(angle), y: centerY + radius * Math.sin(angle) },
-              { x: centerX + radius * Math.cos(angle + 120), y: centerY + radius * Math.sin(angle + 120) },
-              { x: centerX + radius * Math.cos(angle + 240), y: centerY + radius * Math.sin(angle + 240) },
-              { x: centerX, y: centerY }
-            ]
-          },
-          repeat: -1,
-          ease: "none",
-          rotation: 360,
-        }
-      }
-
-      // Apply the floating animation
-      gsap.to(particle, randomPath())
-
-      // Size and opacity pulsing animation
-      gsap.to(particle, {
-        duration: gsap.utils.random(2, 4),
-        scale: gsap.utils.random(0.8, 1.5),
-        opacity: gsap.utils.random(0.1, 0.4),
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-        delay: i * -0.1,
-      })
-    }
-
-    // Handle window resize
-    const handleResize = () => {
-      particles.forEach(particle => {
-        const padding = 50
-        gsap.set(particle, {
-          x: gsap.utils.random(padding, container.offsetWidth - padding),
-          y: gsap.utils.random(padding, container.offsetHeight - padding),
-        })
-      })
-    }
-
-    window.addEventListener('resize', handleResize)
-
-    return () => {
-      imageAnimation.kill()
-      window.removeEventListener('resize', handleResize)
-      particles.forEach(particle => {
-        gsap.killTweensOf(particle)
-        particle.remove()
-      })
-    }
-  }, [])
+  const services = [
+    {
+      id: 1,
+      title: "Graphic Design",
+      image: "/graphic.png",
+      description:
+        "Gen1 Solutions provides high quality Graphic Design services which include Social Media Campaigns, Banner Designs, Thumbnail Designs. We are the best in Designing Social media banners and Event posters. Let us create creative customizable designs to elevate your brand.",
+      bgColor: "bg-black",
+      textColor: "text-white",
+      labelBg: "bg-zinc-800",
+      labelText: "text-white",
+      icon: Search,
+      benefits: [
+        "Professional designs that capture your brand's essence",
+        "Eye-catching social media graphics that increase engagement",
+        "Custom banner designs that convert visitors to customers",
+        "Event posters that drive attendance and create buzz",
+      ],
+      process: [
+        { title: "Research", description: "We analyze your brand, audience, and competitors to inform our design strategy", icon: Search },
+        { title: "Planning", description: "We create mood boards and sketches to establish the visual direction", icon: BarChart3 },
+        { title: "Execution", description: "We craft pixel-perfect designs that align with your brand and objectives", icon: Code },
+      ],
+      portfolioItems: ["/poster1.png", "/lost.jpg", "/football.jpg", "/night.jpg"],
+    },
+    {
+      id: 2,
+      title: "Video",
+      image: "/video.png",
+      description:
+        "Gen1 Solutions provides high quality Video Production services which include Social Media Campaigns, Promotional Videos, Event Coverage. We are the best in creating engaging video content that resonates with your audience and elevates your brand.",
+      bgColor: "bg-black",
+      textColor: "text-white",
+      labelBg: "bg-zinc-800",
+      labelText: "text-white",
+      icon: BarChart3,
+      benefits: [
+        "Professional video production that tells your story",
+        "Engaging content that captures your audience's attention",
+        "High-quality production values that reflect your brand",
+        "Strategic video marketing that drives results",
+      ],
+      process: [
+        { title: "Research", description: "We understand your vision, audience, and objectives to plan the perfect video", icon: Search },
+        { title: "Planning", description: "We create storyboards and scripts to map out the production", icon: BarChart3 },
+        { title: "Execution", description: "We shoot, edit, and produce high-quality videos that achieve your goals", icon: Code },
+      ],
+      portfolioItems: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg", "/placeholder.svg"],
+    },
+    {
+      id: 3,
+      title: "Web Development",
+      image: "/web.png",
+      description:
+        "Gen1 Solutions provides high quality Web Development services which include responsive websites, e-commerce platforms, and custom web applications. We are the best in creating modern, fast, and user-friendly websites that drive results for your organization.",
+      bgColor: "bg-black",
+      textColor: "text-white",
+      labelBg: "bg-zinc-800",
+      labelText: "text-white",
+      icon: Code,
+      benefits: [
+        "Modern, responsive websites that work on all devices",
+        "Fast-loading pages that keep visitors engaged",
+        "SEO-friendly code that improves your search rankings",
+        "User-friendly interfaces that drive conversions",
+      ],
+      process: [
+        { title: "Research", description: "We analyze your requirements, audience, and competitors to inform our development strategy", icon: Search },
+        { title: "Planning", description: "We create wireframes and prototypes to establish the user experience", icon: BarChart3 },
+        { title: "Execution", description: "We develop clean, efficient code that brings your website to life", icon: Code },
+      ],
+      portfolioItems: ["/darelmecca.png"],
+    },
+    {
+      id: 4,
+      title: "Marketing",
+      image: "/marketing.png",
+      description:
+        "Gen1 Solutions provides high quality Marketing services which include Social Media Campaigns, Content Marketing, and Digital Advertising. We are the best in creating strategic marketing plans that connect with your audience and drive measurable results.",
+      bgColor: "bg-black",
+      textColor: "text-white",
+      labelBg: "bg-zinc-800",
+      labelText: "text-white",
+      icon: BarChart3,
+      benefits: [
+        "Strategic marketing plans tailored to your objectives",
+        "Data-driven campaigns that maximize ROI",
+        "Engaging content that resonates with your audience",
+        "Comprehensive analytics to measure and improve results",
+      ],
+      process: [
+        { title: "Research", description: "We analyze your market, audience, and competitors to inform our marketing strategy", icon: Search },
+        { title: "Planning", description: "We create comprehensive marketing plans with clear objectives and KPIs", icon: BarChart3 },
+        { title: "Execution", description: "We implement campaigns across channels and continuously optimize for results", icon: Code },
+      ],
+      portfolioItems: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg", "/placeholder.svg"],
+    },
+  ]
 
   return (
-    <section ref={containerRef} className="bg-zinc-900 py-20 px-4 relative overflow-hidden min-h-[80vh] flex flex-col justify-center items-center">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-red-600/5 to-transparent"></div>
-      
-      <div ref={imageRef} className="transform-gpu relative z-10">
-        <Image 
-          src={"/range.svg"} 
-          alt="Range of Services" 
-          width={900} 
-          height={800}
-          priority
-        />
-      </div>
+    <section  className="bg-zinc-900 py-20 px-4 relative overflow-hidden min-h-[80vh] flex flex-col justify-center items-center">
+      <div className="container mx-auto px-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {services.map((service) => {
+                  const slug = service.title.toLowerCase().replace(/\s+/g, "-");
+                  return (
+                    <Link key={service.id} href={`/services/${slug}`} className="relative overflow-hidden rounded-lg cursor-pointer transition-all duration-300">
+                      <div className="relative h-64 w-full">
+                        <Image
+                          src={service.image}
+                          alt={service.title}
+                          fill
+                          className="object-cover"
+                          style={{ filter: "brightness(0.7)", opacity: 0.5 }}
+                        />
+                      </div>
+                      <div
+                        className={`${service.bgColor} p-6 relative h-48 md:h-56 overflow-hidden transition-all duration-300 hover:bg-[#CC0000]`}
+                      >
+                        <div
+                          className={`${service.labelBg} ${service.labelText} inline-block px-4 py-1 rounded-full text-sm font-medium mb-4 transition-all duration-300 hover:bg-white hover:text-red-600`}
+                        >
+                          {service.title}
+                        </div>
+                        <p className={`${service.textColor} mb-4 line-clamp-3 md:line-clamp-4`}>{service.description}</p>
+                        <div className={`${service.textColor}/80 hover:${service.textColor} flex items-center gap-1 text-sm transition-colors`}>
+                          Learn more <ArrowRight className="h-4 w-4" />
+                        </div>
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
     </section>
   )
 }
