@@ -52,14 +52,14 @@ const Footer = () => {
                 content for global Islamic organizations.
                </p>
                <div className="flex space-x-3 mt-6">
-                <Link href="https://www.linkedin.com/company/gen1solutions" className="bg-white hover:bg-red-500/70 transition-colors p-3 rounded-full">
-                  <Linkedin className="h-5 w-5 text-black" />
+                <Link href="https://www.linkedin.com/company/gen1solutions" className="bg-black hover:bg-red-500/70 transition-colors p-3 rounded-full">
+                  <Linkedin className="h-5 w-5 text-white" />
                 </Link>
-                <Link href="https://www.facebook.com/gen1solutions" className="bg-white hover:bg-red-500/70 transition-colors p-3 rounded-full">
-                  <Facebook className="h-5 w-5 text-black" />
+                <Link href="https://www.facebook.com/gen1solutions" className="bg-black hover:bg-red-500/70 transition-colors p-3 rounded-full">
+                  <Facebook className="h-5 w-5 text-white" />
                 </Link>
-                <Link href="https://www.instagram.com/gen1solutions" className="bg-white hover:bg-red-500/70 transition-colors p-3 rounded-full">
-                  <Instagram className="h-5 w-5 text-black" />
+                <Link href="https://www.instagram.com/gen1solutions" className="bg-black hover:bg-red-500/70 transition-colors p-3 rounded-full">
+                  <Instagram className="h-5 w-5 text-white" />
                 </Link>
               </div>
                </div>
