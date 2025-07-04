@@ -114,7 +114,7 @@ const Testimonial = () => {
           </div>
           
           {/* Testimonial Text */}
-          <div ref={testimonialRef} className="mb-6">
+          <div ref={testimonialRef} className="mb-6 hover:cursor-pointer">
             <p className="text-white text-xl sm:text-lg md:text-2xl font-sans tracking-wide transform scale-x-110 mb-4">
               {currentTestimonial.text.split(currentTestimonial.highlight)[0]}
               <span className="text-red-600">{currentTestimonial.highlight}</span>
