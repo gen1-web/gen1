@@ -42,12 +42,12 @@ const Footer = () => {
           <div className="px-8 md:px-16 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Logo and Description */}
             <div className="md:col-span-2">
-              <div className='flex flex-row items-start'>
-              <Link href="/" className="flex items-center mb-6">
-               <Image src="/Gen1.svg" alt="Gen1 Solutions Logo" width={250} height={250} className="h-15" />
+              <div className='flex flex-row items-start gap-4'>
+              <Link href="/" className="flex items-center mb-6 flex-shrink-0">
+               <Image src="/gen1.png" alt="Gen1 Solutions Logo" width={80} height={80} className="h-20 w-20 object-contain" />
                </Link>
                <div className='flex flex-col'>
-               <p className="text-white/90 text-2xl max-w-md">
+               <p className="text-white/90 text-lg max-w-md leading-relaxed">
                 Gen1 Solutions is a leading creative agency, dedicated to delivering innovative and purpose-driven
                 content for global Islamic organizations.
                </p>

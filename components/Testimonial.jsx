@@ -5,9 +5,11 @@ import { gsap } from "gsap"
 
 const Testimonial = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [isPaused, setIsPaused] = useState(false)
   const testimonialRef = useRef(null)
   const profileRef = useRef(null)
   const quoteRef = useRef(null)
+  const intervalRef = useRef(null)
 
   const testimonials = [
     {
@@ -45,55 +47,67 @@ const Testimonial = () => {
   ]
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      // Animate out current testimonial
-      const tl = gsap.timeline()
+    const startInterval = () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current)
+      }
       
-      tl.to([testimonialRef.current, profileRef.current], {
-        opacity: 0,
-        y: -20,
-        duration: 0.3,
-        ease: "power2.inOut"
-      })
-      .call(() => {
-        // Change to next testimonial
-        setCurrentIndex((prevIndex) => 
-          prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
-        )
-      })
-      .to([testimonialRef.current, profileRef.current], {
-        opacity: 1,
-        y: 0,
-        duration: 0.3,
-        ease: "power2.inOut"
-      })
-    }, 5000) // Change every 5 seconds
+      intervalRef.current = setInterval(() => {
+        if (!isPaused) {
+          // Animate out current testimonial
+          const tl = gsap.timeline()
+          
+          tl.to([testimonialRef.current, profileRef.current], {
+            opacity: 0,
+            y: -20,
+            duration: 0.2, // Faster animation
+            ease: "power2.inOut"
+          })
+          .call(() => {
+            // Change to next testimonial
+            setCurrentIndex((prevIndex) => 
+              prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+            )
+          })
+          .to([testimonialRef.current, profileRef.current], {
+            opacity: 1,
+            y: 0,
+            duration: 0.2, // Faster animation
+            ease: "power2.inOut"
+          })
+        }
+      }, 2500) // Faster interval - 2.5 seconds instead of 5
+    }
 
-    return () => clearInterval(interval)
-  }, [testimonials.length])
+    startInterval()
+
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current)
+      }
+    }
+  }, [testimonials.length, isPaused])
+
+  // Handle mouse enter/leave
+  const handleMouseEnter = () => {
+    setIsPaused(true)
+  }
+
+  const handleMouseLeave = () => {
+    setIsPaused(false)
+  }
 
   const currentTestimonial = testimonials[currentIndex]
 
   return (
     <section className="bg-black py-12 px-4 relative overflow-hidden">
-      {/* Background particles */}
-      <div className="absolute inset-0 opacity-20">
-        {[...Array(15)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-1 h-1 bg-red-600 rounded-full"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-              animation: `float ${5 + Math.random() * 5}s ease-in-out infinite`
-            }}
-          />
-        ))}
-      </div>
 
       <div className="container mx-auto max-w-2xl relative z-10">
-        <div className="flex flex-col items-center text-center">
+        <div 
+          className="flex flex-col items-center text-center"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
           {/* Quote Mark */}
           <div className="text-red-600 mb-6">
             <Image src="/commas.svg" alt="Quote Mark" width={60} height={60} />
