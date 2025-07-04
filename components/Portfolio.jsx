@@ -14,7 +14,7 @@ const portfolioItems = [
     category: "Social Media Campaign",
     description: `A comprehensive session promotion campaign designed to increase visibility and drive sales. Our strategic approach combines traditional and digital marketing techniques.
     We work closely with authors and publishers to create customized campaigns that reach the right audience at the right time.`,
-    tags: ["Tag 1", "Tag 2", "Tag 3", "Tag 4"],
+    tags: ["Publishing", "Marketing", "Design", "Social"],
     image: "/lost.jpg",
     thumbnail: "/lost.jpg",
     type: "Graphic Design",
@@ -220,7 +220,7 @@ export default function PortfolioSection() {
                     src={selectedItem.videoUrl}
                     title={selectedItem.title}
                     frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerPolicy="strict-origin-when-cross-origin"
                     allowFullScreen
                     className="absolute top-0 left-0 w-full h-full"
