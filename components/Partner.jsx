@@ -1,10 +1,8 @@
 "use client";
-import { useRef, useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
-import { gsap } from "gsap";
 
 export default function PartnerClients() {
-  const mobileRef = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
 
   const partners = [
@@ -15,10 +13,12 @@ export default function PartnerClients() {
     { id: 5, name: "Client 5", image: "/Artboard 10.png" },
     { id: 6, name: "Client 6", image: "/Artboard 6.png" },
     { id: 7, name: "Quranic Media", image: "/Artboard 19.png" },
-    { id: 8, name: "Quranic Media", image: "/Artboard 18.png" }
+    { id: 8, name: "Quranic Media", image: "/Artboard 18.png" },
+    { id: 9, name: "Quranic Media", image: "/Artboard 17.png" },
+    { id: 10, name: "Quranic Media", image: "/Artboard 13.png" },
+    { id: 11, name: "Quranic Media", image: "/Artboard 9.png" },
+    { id: 12, name: "Quranic Media", image: "/Artboard 1.png" },
   ];
-
-  const allPartners = [...partners, ...partners];
 
   useEffect(() => {
     const updateIsMobile = () => setIsMobile(window.innerWidth < 768);
@@ -27,24 +27,6 @@ export default function PartnerClients() {
     return () => window.removeEventListener("resize", updateIsMobile);
   }, []);
 
-  useEffect(() => {
-    const el = mobileRef.current;
-    if (!isMobile || !el) return;
-
-    gsap.set(el, { x: 0 });
-
-    const itemWidth = 120;
-    const tl = gsap.timeline({ repeat: -1, defaults: { ease: "none" } });
-    tl.to(el, {
-      x: `-=${itemWidth * partners.length}`,
-      duration: 20,
-    });
-
-    return () => {
-      tl.kill();
-    };
-  }, [isMobile]);
-
   return (
     <section className="py-16 px-4 ml-8 overflow-hidden">
       <div className="container mx-auto">
@@ -52,50 +34,22 @@ export default function PartnerClients() {
           Partner & Clients
         </h2>
 
-        {/* Desktop View */}
-        {!isMobile && (
-          <div className="flex items-center gap-2">
-            <div className="flex -space-x-13 overflow-hidden hover:space-x-20 transition-all duration-300">
-              {partners.map((i) => (
-                <div
-                  key={i.id}
-                  className="w-[100px] h-[100px] rounded-full border-2 border-secondary overflow-hidden relative transition-all duration-700 ease-out "
-                >
-                  <Image
-                    src={i.image}
-                    alt={i.name}
-                    layout="fill"
-                    className="object-cover bg-gray-100"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Mobile View with Scrolling Animation */}
-        {isMobile && (
-          <div className="w-full overflow-hidden">
+        {/* Display all partners in a single line */}
+        <div className="flex flex-wrap justify-start gap-6">
+          {partners.map((i) => (
             <div
-              ref={mobileRef}
-              className="flex gap-6 w-max"
+              key={i.id}
+              className="w-[100px] h-[100px] rounded-full border-2 border-secondary overflow-hidden relative"
             >
-              {allPartners.map((i, index) => (
-                <div
-                  key={`${i.id}-${index}`}
-                  className="w-[100px] h-[100px] rounded-full border-2 border-secondary overflow-hidden relative flex-shrink-0"
-                >
-                  <Image
-                    src={i.image}
-                    alt={i.name}
-                    layout="fill"
-                    className="object-cover bg-gray-100"
-                  />
-                </div>
-              ))}
+              <Image
+                src={i.image}
+                alt={i.name}
+                layout="fill"
+                className="object-cover bg-gray-100"
+              />
             </div>
-          </div>
-        )}
+          ))}
+        </div>
       </div>
     </section>
   );
