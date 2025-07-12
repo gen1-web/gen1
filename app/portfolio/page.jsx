@@ -89,9 +89,9 @@ export default function PortfolioPage() {
       id: 6,
       title: "Travel Agency Website",
       category: "Web Development",
-      image: "/darelmecca.png?height=400&width=300",
+      image: "/darelmecca.png",
       type: "Web Development",
-      aspectRatio: "16/9",
+      aspectRatio: "3/4",
       date: "January 20, 2023",
       description: "A modern travel platform designed specifically for Islamic travels and tours.",
       fullDescription:
@@ -165,6 +165,58 @@ export default function PortfolioPage() {
       fullDescription:
         "Gen1 Solutions is a leading creative agency, dedicated to delivering innovative and purpose-driven content for global Islamic organizations. With a deep-rooted commitment to Islamic values, we are proud to offer Halal creative solutions that inspire and connect with audiences around the world, crafting narratives that touch hearts and uplift communities.",
     },
+    {
+      id: 13,
+      title: "Father and Son",
+      category: "Event Campaign",
+      image: "/poster12.jpg?height=400&width=300",
+      type: "Graphic Design",
+      aspectRatio: "3/4",
+      date: "June 23, 2023",
+      description:
+        "Building an internal tool of this scale is no small feat, but with the right approach, it can be a powerful force for uniting a community.",
+      fullDescription:
+        "Gen1 Solutions is a leading creative agency, dedicated to delivering innovative and purpose-driven content for global Islamic organizations. With a deep-rooted commitment to Islamic values, we are proud to offer Halal creative solutions that inspire and connect with audiences around the world, crafting narratives that touch hearts and uplift communities.",
+      details: "REFRESHMENTS, GAMES, STALLS,NIGHT STAY, COACHING, QURAN RECITATION",
+      organization: "AIC COMMUNITY",
+      date: "SUNDAY 8 DEC",
+      time: "12-5PM",
+      footer: "PORTION OF THE EVENT PROCEEDS WILL GO TOWARDS THE GAZA EMERGENCY APPEAL",
+    },
+    {
+      id: 14,
+      title: "Creativity Challenge",
+      category: "Event Campaign",
+      image: "/poster13.jpg?height=400&width=300",
+      type: "Graphic Design",
+      aspectRatio: "3/4",
+      date: "June 23, 2023",
+      description:
+        "Building an internal tool of this scale is no small feat, but with the right approach, it can be a powerful force for uniting a community.",
+      fullDescription:
+        "Gen1 Solutions is a leading creative agency, dedicated to delivering innovative and purpose-driven content for global Islamic organizations. With a deep-rooted commitment to Islamic values, we are proud to offer Halal creative solutions that inspire and connect with audiences around the world, crafting narratives that touch hearts and uplift communities.",
+      details: "Amazon Gift Cards, Script writing, Film Production, Editing",
+      organization: "AIC COMMUNITY",
+      date: "SUNDAY 8 DEC",
+      time: "12-5PM"
+    },
+    {
+      id: 15,
+      title: "Youth Iftar",
+      category: "Event Campaign",
+      image: "/poster14.jpg?height=400&width=300",
+      type: "Graphic Design",
+      aspectRatio: "3/4",
+      date: "June 23, 2023",
+      description:
+        "Building an internal tool of this scale is no small feat, but with the right approach, it can be a powerful force for uniting a community.",
+      fullDescription:
+        "Gen1 Solutions is a leading creative agency, dedicated to delivering innovative and purpose-driven content for global Islamic organizations. With a deep-rooted commitment to Islamic values, we are proud to offer Halal creative solutions that inspire and connect with audiences around the world, crafting narratives that touch hearts and uplift communities.",
+      details: "Fun , games, islamic talks, food, refreshments",
+      organization: "AIC COMMUNITY",
+      date: "SUNDAY 8 DEC",
+      time: "12-5PM"
+    }
   ]
 
   // Filter categories
@@ -218,7 +270,7 @@ export default function PortfolioPage() {
             <div className="flex justify-between items-center">
               <div>
                 <div className="text-zinc-500 text-sm">{selectedItem.category}</div>
-                <h1 className="text-4xl md:text-5xl font-bold mt-1">{selectedItem.title} Poster Design</h1>
+                <h1 className="text-4xl md:text-5xl font-bold mt-1">{selectedItem.title}</h1>
               </div>
               <div className="text-zinc-500 text-sm">{selectedItem.date}</div>
             </div>
@@ -249,7 +301,7 @@ export default function PortfolioPage() {
                   )
                 ) : (
                   <Image
-                    src={selectedItem.image || "/placeholder.svg"}
+                    src={selectedItem.image}
                     alt={selectedItem.title}
                     fill
                     className="object-cover rounded"
@@ -352,7 +404,11 @@ export default function PortfolioPage() {
                   <div
                     key={item.id}
                     className={`${
-                      index === 0 && item.aspectRatio === "16/9" ? "md:col-span-2" : "md:col-span-1"
+                      item.type === "Web Development"
+                        ? "lg:col-span-2 lg:row-span-2"
+                        : index === 0 && item.aspectRatio === "16/9"
+                        ? "md:col-span-2"
+                        : "md:col-span-1"
                     } transition-all duration-300`}
                     onClick={() => handleItemClick(item)}
                   >

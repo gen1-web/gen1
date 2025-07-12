@@ -14,35 +14,33 @@ const Testimonial = () => {
   const testimonials = [
     {
       id: 1,
-      text: "Gen1 Solutions is a leading creative agency, dedicated to delivering innovative and purpose-driven content for global Islamic organizations. They designed some amazing graphics for my YouTube channel. Highly Recommended!!!",
-      name: "Ali E.",
-      role: "Islamic Influencer",
-      image: "/aliE.jpg",
-      highlight: "designed some amazing graphics"
+      text: "I truly admire the professional work delivered by the Gen1 Solutions team. Their designs, marketing strategies, ad campaigns, and video production were all exceptional. We highly recommend their services to anyone seeking reliable, creative, and result-driven digital solutions.",
+      name: "CEO Mohammad Asif",
+      company: "Dar el Mecca",
     },
     {
       id: 2,
-      text: "Working with Gen1 Solutions has been an incredible experience. Their video production quality is outstanding and they truly understand our vision. The team is professional and delivers on time every single time.",
-      name: "Sarah Ahmed",
-      role: "Content Creator",
-      image: "/aliE.jpg", // You can replace with actual image
-      highlight: "video production quality is outstanding"
+      text: "Gen1 Solutions handled our digital marketing campaigns with remarkable efficiency. Their ability to create engaging designs and ads helped us boost app sign-ups and enhance our brand presence. We appreciate their dedication and would confidently recommend them to others",
+      name: "Saudah Ali",
+      company: "HappyClub Rides",
     },
     {
       id: 3,
-      text: "The marketing campaigns created by Gen1 Solutions have significantly increased our reach and engagement. Their strategic approach and creative execution are exactly what we needed for our brand growth.",
-      name: "Muhammad Hassan",
-      role: "Business Owner",
-      image: "/aliE.jpg", // You can replace with actual image
-      highlight: "significantly increased our reach"
+      text: "The team at Gen1 Solutions brought our vision to life with their fresh, modern designs and impactful marketing. Their ad creatives and video content helped us effectively connect with our audience. A dependable, professional agency we look forward to working with again",
+      name: "Abdul Rehman",
+      company: "Tazgo Fresh Juices",
     },
     {
       id: 4,
-      text: "Gen1 Solutions delivered exceptional web development services for our organization. The website is not only beautiful but also highly functional. Their attention to detail is remarkable.",
-      name: "Fatima Khan",
-      role: "Project Manager",
-      image: "/aliE.jpg", // You can replace with actual image
-      highlight: "exceptional web development services"
+      text: "We were thoroughly impressed by the outstanding designs delivered by Gen1 Solutions. Their creativity, attention to detail, and ability to capture our brand identity were remarkable. The final results truly elevated our social media and event promotions.",
+      name: "",
+      company: "Yaseen Youth UK",
+    },
+     {
+      id: 5,
+      text: "Gen1 Solutions consistently provides us with visually impactful and meaningful designs. Their work reflects a clear understanding of our message and audience, and their quick turnaround times make them a dependable creative partner",
+      name: "",
+      company: "Discover Islam",
     }
   ]
 
@@ -123,18 +121,11 @@ const Testimonial = () => {
           </div>
 
           {/* Profile */}
-          <div ref={profileRef} className="mt-6 flex flex-col items-center">
-            <div className="w-14 h-14 rounded-full overflow-hidden mb-2 border border-zinc-700 transition-transform duration-300 hover:scale-110">
-              <Image
-                src={currentTestimonial.image}
-                alt={currentTestimonial.name}
-                width={56}
-                height={56}
-                className="object-cover"
-              />
-            </div>
-            <h4 className="text-white text-base font-medium">{currentTestimonial.name}</h4>
-            <p className="text-zinc-500 text-xs">{currentTestimonial.role}</p>
+          <div ref={profileRef} className="mt-8 flex flex-col items-center">
+            {currentTestimonial.name && (
+              <h4 className="text-white text-xl font-semibold mb-2">{currentTestimonial.name}</h4>
+            )}
+            <p className="text-red-400 text-lg font-medium">{currentTestimonial.company}</p>
           </div>
 
           {/* Testimonial indicators */}
