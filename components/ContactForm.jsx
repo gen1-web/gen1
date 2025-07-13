@@ -72,10 +72,8 @@ const ContactForm = () => {
               <br />
               Drop us a message, and we'll get back to you promptly!
             </p>
-
-       
                         <div className="flex gap-3 mb-12">
-                          <Image src="/uae.png" alt="UAE Flag" width={40} height={40} className="object-contain" />
+                          <Image src="/aus.png" alt="Aus Flag" width={40} height={40} className="object-contain" />
                           <Image src="/uk.png" alt="UK Flag" width={40} height={40} className="object-contain" />
                           <Image src="/usa.png" alt="USA Flag" width={40} height={40} className="object-contain" />
                           <Image src="/pakistan.png" alt="Pakistan Flag" width={40} height={40} className="object-contain rounded-md" />
