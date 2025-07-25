@@ -3,14 +3,14 @@ import Image from "next/image";
 
 const AboutHero = () => {
   return (
-    <section className="bg-black flex flex-col justify-center px-4 py-8 relative ">
+    <section className="bg-black flex flex-col justify-center px-4 py-8 sm:py-12 md:py-16 relative">
       <div className="container mx-auto">
         {/* Main Heading - Centered */}
-        <div className="text-center mb-20">
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-4">
+        <div className="text-center mb-12 sm:mb-16 md:mb-20">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold leading-tight mb-2 sm:mb-4">
             From idea to reality
           </h1>
-          <h2 className="text-4xl md:text-6xl font-bold leading-tight text-red-600">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold leading-tight text-red-600">
             Your Vision, Our Theme.
           </h2>
         </div>
@@ -23,21 +23,23 @@ const AboutHero = () => {
             Our <span className="text-red-600">Story</span>
           </h3>
           
-            <p className="text-2xl">
-              We started out like most—stuck in the 9-to-5 grind, clocking in and out with little room for our creative
-              sparks to shine. But we had a passion for marketing and a belief that we could do things differently.
+            <p className="text-2xl italic">
+              "At Gen1 Solutions, we don't just deliver services—we deliver excellence. Every project reflects our dedication to quality, creativity, and client success."
             </p>
-            <p className="text-2xl">
-              Top-notch marketing services at prices that won't break the bank.
+            <p className="text-2xl ">
+              — Abdul Aleem, CEO & Founder, Gen1 Solutions Ltd.
+            </p>
+            <p>
+              Contact: +92 305 4559888
             </p>
         </div>
         {/* Right: Image */}
         <div className="md:pr-12 flex  justify-end">
-          <Image src={"/Gen1.svg"}
+          <Image src={"/abdul.jpg"}
             alt="Our Story"
             width={700}
             height={700}
-            className="w-1/2 "
+            className="w-1/2 border-2 border-secondary rounded-full shadow-lg object-cover"
             />
         </div>
       </div>
