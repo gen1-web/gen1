@@ -87,19 +87,11 @@ const ContactForm = () => {
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-white" />
-                <span className="text-white">doc.abdulaleem@gmail.com</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Mail className="h-5 w-5 text-white" />
                 <span className="text-white">contact.gen1solutions@gmail.com</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-white" />
                 <span className="text-white">+923054559888</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <House className="h-5 w-5 text-white" />
-                <span className="text-white">House 216, G4 Wapda Town, Lahore, Pakistan</span>
               </div>
               <div className="flex items-center gap-3">
                 <MessageCircle className="h-5 w-5 text-white" />
