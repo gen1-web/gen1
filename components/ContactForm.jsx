@@ -1,7 +1,7 @@
 "use client"
 import { useState } from "react"
 import axios from 'axios'
-import {  Mail, Phone, Facebook, Instagram, Linkedin} from "lucide-react"
+import {  Mail, Phone, Facebook, Instagram, Linkedin, PersonStanding, House, MessageCircle} from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -82,12 +82,28 @@ const ContactForm = () => {
 
             <div className="space-y-6 mb-12">
               <div className="flex items-center gap-3">
+                <PersonStanding className="h-5 w-5 text-white" />
+                <span className="text-white">Abdul Aleem</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Mail className="h-5 w-5 text-white" />
+                <span className="text-white">doc.abdulaleem@gmail.com</span>
+              </div>
+              <div className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-white" />
                 <span className="text-white">contact.gen1solutions@gmail.com</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-white" />
                 <span className="text-white">+923054559888</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <House className="h-5 w-5 text-white" />
+                <span className="text-white">House 216, G4 Wapda Town, Lahore, Pakistan</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <MessageCircle className="h-5 w-5 text-white" />
+                <span className="text-white">Postal Code: 54770</span>
               </div>
             </div>
 
