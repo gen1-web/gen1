@@ -41,7 +41,7 @@ export default function ServicesSection() {
     { title: "Marketing", href: "/services/marketing" },
   ];
 
-  const cardText = "Let us create creative customizable designs to elevate your brand";
+  const cardText = "Let us create creative customizable designs to elevate your brand.";
 
   return (
     <>
@@ -58,14 +58,14 @@ export default function ServicesSection() {
             <h3 className="text-4xl md:text-5xl font-bold text-white">We Offer</h3>
           </div>
 
-          <div className="md:col-span-3 grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div className="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {services.map((service, idx) => (
               <div
                 key={idx}
                 className="group relative service-card bg-zinc-700 rounded-3xl p-6 flex flex-col justify-between h-80 transition-colors duration-500 ease-in-out overflow-hidden hover:bg-[#CC0000]"
               >
                 <div className="relative z-10">
-                  <div className="TITLE-DIV bg-zinc-800 text-white rounded-full px-4 py-2 inline-block font-semibold w-fit transition-all duration-300 group-hover:bg-white group-hover:text-red-600">
+                  <div className="TITLE-DIV bg-zinc-800 text-white rounded-full px-4 py-2 inline-block font-semibold w-fit transition-all duration-300 group-hover:bg-white group-hover:text-red-600 text-sm sm:text-base whitespace-nowrap">
                     {service.title}
                   </div>
                   <p className="text-white text-lg mt-auto mb-8">{cardText}</p>

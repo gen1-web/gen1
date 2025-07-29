@@ -94,7 +94,7 @@ const Gallery = () => {
           className="rounded-full bg-white text-black hover:bg-[#CC0000] border-0 flex items-center gap-2 px-6 py-6 text-lg mx-auto"
         >
           <Calendar className="h-5 w-5" />
-          <Link href="/contact-us">Book a FREE Consultation</Link>
+          <Link href="/contact-us">Book a Free Consultation</Link>
         </Button>
       </div>
     </section>

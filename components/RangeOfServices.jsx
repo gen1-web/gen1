@@ -118,7 +118,7 @@ const RangeOfServices = () => {
                           alt={service.title}
                           fill
                           className="object-cover"
-                          style={{ filter: "brightness(0.7)", opacity: 0.5 }}
+                          style={{ filter: "brightness(0.7)"}}
                         />
                       </div>
                       <div

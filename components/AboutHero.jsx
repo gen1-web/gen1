@@ -8,7 +8,7 @@ const AboutHero = () => {
         {/* Main Heading - Centered */}
         <div className="text-center mb-12 sm:mb-16 md:mb-20">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold leading-tight mb-2 sm:mb-4">
-            From idea to reality
+            From Idea To Reality
           </h1>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold leading-tight text-red-600">
             Your Vision, Our Theme.
@@ -16,9 +16,9 @@ const AboutHero = () => {
         </div>
       </div>
       {/* Our Story Section - Full width */}
-      <div className="w-full flex flex-col md:flex-row items-center justify-evenly gap-10 px-4 md:px-12 mt-6">
+      <div className="w-full flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 px-4 md:px-12 mt-6">
         {/* Left: Text */}
-        <div className="flex-1 text-white md:pl-12">
+        <div className="flex-1 max-w-2xl text-white md:pl-12">
           <h3 className="text-4xl md:text-5xl font-bold mb-6">
             Our <span className="text-red-600">Story</span>
           </h3>
@@ -34,7 +34,7 @@ const AboutHero = () => {
             </p>
         </div>
         {/* Right: Image */}
-        <div className="md:pr-12 flex  justify-end">
+        <div className="flex-shrink-0 md:pr-12 flex justify-center md:justify-end">
           <Image src={"/abdul.jpg"}
             alt="Our Story"
             width={700}

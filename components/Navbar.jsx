@@ -50,7 +50,7 @@ const Navbar = () => {
           className="rounded-full bg-white text-black hover:bg-[#CC0000] border-0 flex items-center gap-2 px-4"
         >
           <Calendar className="h-4 w-4" />
-          <Link href="/contact-us">Book a FREE Consultation</Link>
+          <Link href="/contact-us">Book a Free Consultation</Link>
         </Button>
         <Link href="https://wa.me/923054559888" target="_blank">
           <Button
@@ -83,7 +83,7 @@ const Navbar = () => {
                 className="rounded-full bg-white text-black hover:bg-[#CC0000] border-0 flex items-center gap-2 px-4 w-full justify-center"
               >
                 <Calendar className="h-4 w-4" />
-                <Link href="/contact-us">Book a FREE Consultation</Link>
+                <Link href="/contact-us">Book a Free Consultation</Link>
               </Button>
               <Link href="https://wa.me/923054559888" target="_blank">
                 <Button
