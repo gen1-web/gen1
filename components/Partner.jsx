@@ -56,7 +56,7 @@ export default function PartnerClients() {
   return (
     <section className="py-16 px-4 ml-8 overflow-hidden">
       <div className="container mx-auto">
-        <h2 className="text-white text-5xl font-bold mb-16">
+        <h2 className="text-white text-5xl font-bold mb-16 text-center">
           Partner & Clients
         </h2>
 
