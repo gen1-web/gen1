@@ -34,14 +34,14 @@ const AboutHero = () => {
             </p>
         </div>
         {/* Right: Image */}
-        <div className="flex-shrink-0 md:pr-12 flex justify-center md:justify-end">
+        
           <Image src={"/abdul.jpg"}
             alt="Our Story"
-            width={700}
-            height={700}
-            className="w-1/2 border-2 border-secondary rounded-full shadow-lg object-cover"
+            width={400}
+            height={400}
+            className=" border-2 border-secondary rounded-full shadow-lg object-cover"
             />
-        </div>
+        
       </div>
     </section>
   );

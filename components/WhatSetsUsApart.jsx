@@ -8,7 +8,7 @@ const WhatSetsUsApart = () => {
       <div className="absolute top-0 left-0 w-full h-10 md:h-12 bg-black z-0" />
 
       {/* Image for Larger Screens */}
-      <div className="hidden md:block absolute right-0 bottom-4">
+      <div className="hidden md:block absolute right-0 bottom-4 ">
         <Image
           src="/chess.png"
           alt="Strategic planning with chess pieces and wooden blocks"
@@ -38,7 +38,7 @@ const WhatSetsUsApart = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               What sets us apart?
             </h2>
-            <p className="text-white/95 text-3xl md:text-xl leading-relaxed mb-6">
+            <p className="text-white/95 text-5xl md:text-xl leading-relaxed mb-6 ">
               We're especially passionate about helping Islamic brands—those amazing businesses that often struggle to
               find quality marketing support. We offer affordable, high-quality solutions tailored just for them. It's
               been an exciting journey, and we're thrilled to be building something meaningful!
