@@ -72,7 +72,7 @@ export default function ServicesSection() {
                     {service.title}
                   </div>
                   <div>
-                    <p className="text-white text-2xl mt-auto mb-4 scale-y-150 md:scale-y-100">{cardText}</p>
+                    <p className="text-white text-2xl mt-auto mb-4">{cardText}</p>
                   </div>
                   <div>
                     <Link
