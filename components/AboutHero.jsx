@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 
 const AboutHero = () => {
   return (
@@ -16,9 +15,9 @@ const AboutHero = () => {
         </div>
       </div>
       {/* Our Story Section - Full width */}
-      <div className="w-full flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 px-4 md:px-12 mt-6">
-        {/* Left: Text */}
-        <div className="flex-1 max-w-2xl text-white md:pl-12">
+      <div className="w-full flex flex-col items-center justify-center px-4 md:px-12 mt-6">
+        {/* Text */}
+        <div className="max-w-2xl text-white text-center">
           <h3 className="text-4xl md:text-5xl font-bold mb-6">
             Our <span className="text-red-600">Story</span>
           </h3>
@@ -33,15 +32,6 @@ const AboutHero = () => {
               Contact: +92 305 4559888
             </p>
         </div>
-        {/* Right: Image */}
-        
-          <Image src={"/abdul.jpg"}
-            alt="Our Story"
-            width={400}
-            height={400}
-            className=" border-2 border-secondary rounded-full shadow-lg object-cover"
-            />
-        
       </div>
     </section>
   );
