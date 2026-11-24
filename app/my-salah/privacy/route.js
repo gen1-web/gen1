@@ -1,4 +1,7 @@
-<!doctype html>
+// My Salah privacy policy, served as a plain HTML page.
+export const dynamic = 'force-static';
+
+const HTML = `<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -146,3 +149,8 @@
 </main>
 </body>
 </html>
+`;
+
+export function GET() {
+  return new Response(HTML, { headers: { 'Content-Type': 'text/html; charset=utf-8' } });
+}
