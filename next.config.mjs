@@ -9,6 +9,9 @@ const nextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [{ source: '/my-salah/privacy', destination: '/my-salah/privacy.html' }];
+  },
 };
 
 export default nextConfig;
